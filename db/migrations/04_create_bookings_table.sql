@@ -1,0 +1,1 @@
+CREATE TABLE bookings(id SERIAL PRIMARY KEY, listing_id INTEGER REFERENCES listings (id), user_id INTEGER REFERENCES users (id), start_date DATE, end_date DATE, price_total NUMERIC, confirmation BOOLEAN);
