@@ -19,9 +19,10 @@ end
 feature 'User screen changes once signed in' do
   scenario '- new button appears' do
     visit '/'
+    fill_in('username', with: 'Ol Bob')
     click_button('Sign In')
 
     expect(page.current_path).to eq '/'
-    expect(page.find_button('Signed In')).to be_truthy
+    expect(page.find_button('Signed in')).to be_truthy
   end
 end

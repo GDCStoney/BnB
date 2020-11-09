@@ -1,6 +1,7 @@
 # Alternate BnB #
 ## Contents: ##
   - [User stories](#user-stories)
+  - [Initial Interface Design work](./docs/interface.md)
 
 ## User stories ##
 ### User story 1: ###
