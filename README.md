@@ -101,4 +101,27 @@ I want receive a text message with dates when my booking is confirmed.
 ### Properties:
 - User:
   - username
-  - 
+  - ID
+  - Phone number
+  - Email address
+- Listing:
+  - Available dates
+  - Name
+  - Price
+  - Description
+  - Host ID
+- Booking:
+  - Listing
+  - User ID
+  - Date range
+  - Price (sum)
+  - Confirmed/status?
+
+### Views:
+- Homepage
+  - Sign in/Sign up
+- Manage Listing
+  - Listing add
+- Search(results)
+- Manage Bookings
+- Calendar
