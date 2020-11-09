@@ -51,3 +51,54 @@ As a user,
 So that I know when my booking is confirmed,
 I want receive a text message with dates when my booking is confirmed.
 ```
+
+## Domain model ##
+
+#### Infrastructure
+- Twilio API
+- Some sort of email gem
+- BCrypt
+- Sinatra
+- PostgreSQL
+- Shotgun
+
+#### Objects:
+- User
+- Listing
+- Booking
+- Communication Manager
+
+#### Methods
+- User:
+  - sign_up
+  - sign_in
+  - Class:
+    - all
+    - find
+    - status?
+    - member?
+    - check_login?
+- Listing:
+  - available_dates
+  - check_availability?
+  - Class:
+    - all
+    - find
+- Booking:
+  - create
+  - confirmation
+  - delete
+  - edit (dates)
+  - Class:
+    - all
+    - find (dates)
+    - status?
+- Communication manager:
+  - Class:
+    - send_text
+    - send_email
+
+### Properties:
+- User:
+  - username
+  - 
