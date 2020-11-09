@@ -1,8 +1,8 @@
 # Alternate BnB #
 ## Contents: ##
-  - [User stories] (#User-stories:)
+  - [User stories](#User-stories)
 
-## User stories: ##
+## User stories ##
 ### User story 1: ###
 ```
 As a user,
