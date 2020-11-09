@@ -1,2 +1,2 @@
 CREATE DATABASE bnb;
-CREATE DATABASE bnb.test;
+CREATE DATABASE bnb_test;
