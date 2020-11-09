@@ -1,0 +1,14 @@
+<html>
+"Welcome to the BEST Beaches and Stream BnB listing!"
+<form action='/sign_up'>
+  <input type='submit' value='Sign Up' name='sign_up'
+</form>
+<form action='/' method='post'>
+  <input type='text' name='username' placeholder='User Name'>
+  
+  <% if @username %>
+    <input type='submit' value='Signed In'>
+  <% end %>
+  <input type='submit' value='Sign In' name='sign_in'>
+</form>
+</html>

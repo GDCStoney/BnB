@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-source 'http://rubygems.org'
 
-gem 'activerecord'
-gem 'capybara'
-gem 'pg'
-gem 'rake'
-gem 'rspec'
-gem 'sinatra'
-gem 'sinatra-activerecord'
-gem 'rubocop', '0.79.0'
-gem 'travis'
-=======
 source 'https://rubygems.org'
 
 gem 'sinatra'
@@ -26,4 +14,3 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
->>>>>>> upstream/main

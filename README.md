@@ -12,7 +12,7 @@ I would like to sign-up.
 ### User story 2: ###
 ```
 As a host,
-So that I can recieve bookings,
+So that I can receive bookings,
 I want to be able to list multiple spaces.
 ```
 ### User story 3: ###
