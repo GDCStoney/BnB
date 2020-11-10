@@ -13,8 +13,8 @@
           null,
           1,
           null,
-          4,
-          4,
+          7,
+          7,
           null,
           null,
           1,
@@ -24,12 +24,12 @@
           null,
           null,
           1,
-          null,
+          3,
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null
         ]
@@ -99,11 +99,35 @@
           1,
           1,
           null,
+          null
+        ]
+      },
+      "/Users/gstoney2/projects/Makers/BnB/spec/features/f2_sign_up_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1604996563
+    "timestamp": 1605009175
   }
 }
