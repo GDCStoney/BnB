@@ -41,7 +41,7 @@ class User
   # returns user object with details from given ID
   def self.find(id:)
     result = DatabaseConnection.query("SELECT * FROM users WHERE id = #{id.to_s};")
-    User.new(user['id'], user['username'], user['phone_no'], user['email'])
+    User.new(result[0]['id'], result[0]['username'], result[0]['phone_no'], result[0]['email'])
   end
 
   # true if signed in false if not
