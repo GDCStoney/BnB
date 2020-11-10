@@ -1,6 +1,6 @@
 # Initial Interface Design Discussion
 
-[README file](./README.md)
+[README file](../README.md)
 
 ## Initial Design Concept Flow
 ![Initial Interface Flow](../public/images/initial_interface_design.png)

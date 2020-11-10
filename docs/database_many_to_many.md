@@ -1,6 +1,6 @@
 # Database Design Discussion
 
-[README file](./README.md)
+[README file](../README.md)
 
 ## Table Design Discussion
 ![Database design](../public/images/database_many_to_many.png)
