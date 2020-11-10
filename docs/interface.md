@@ -3,7 +3,7 @@
 [README file](./README.md)
 
 ## Initial Design Concept Flow
-![Initial Interface Flow](./public/images/initial_interface_design.png)
+![Initial Interface Flow](../public/images/initial_interface_design.png)
 
 - discussed the user role flow
   - creating / managing a booking (user role)
@@ -16,4 +16,4 @@
 
 - listings to be in a _card_ format, with functionality dependent on view / listing focus
 
-- search / filtering functionality to be built into the page, not via separate page 
+- search / filtering functionality to be built into the page, not via separate page
