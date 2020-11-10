@@ -1,0 +1,109 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/gstoney2/projects/Makers/BnB/app.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          4,
+          4,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/gstoney2/projects/Makers/BnB/lib/database_connection_setup.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          null
+        ]
+      },
+      "/Users/gstoney2/projects/Makers/BnB/lib/database_connection.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/gstoney2/projects/Makers/BnB/spec/features/f1_infrasture_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1604996563
+  }
+}
