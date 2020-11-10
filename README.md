@@ -2,6 +2,7 @@
 ## Contents: ##
   - [User stories](#user-stories)
   - [Initial Interface Design work](./docs/interface.md)
+  - [Database Discussion](./docs/database_many_to_many.md)
 
 ## User stories ##
 ### User story 1: ###

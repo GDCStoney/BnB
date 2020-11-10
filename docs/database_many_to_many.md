@@ -16,3 +16,4 @@ _there is a many to many relationship_
 
 This means the creation of a ```bookings``` table to map this relationship out explicitly.
   - This enables the booking user and owner user to be explicitly mapped, for managing communications, and queries.
+  - This explicitly maps the User_ID to the Listing_ID, so that queries and processing can be done.

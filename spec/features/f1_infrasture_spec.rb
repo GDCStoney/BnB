@@ -21,6 +21,7 @@ feature 'User screen changes once signed in' do
     visit '/'
     expect(page).not_to have_selector(:id, 'signed_in')
     add_bob_to_db
+    click_button('Signed in')
 
     fill_in('username', with: 'Ol Bob')
     fill_in('password', with: 'damnImfine')

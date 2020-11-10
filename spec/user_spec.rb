@@ -12,10 +12,10 @@ RSpec.describe User do
   end
 
   describe '.sign_in' do
-    it 'Returns true of user password is correct' do
-      User.sign_up(username: "Test", password: "Test", phone_no: "test", email: "test@test.com")
-      result = DatabaseConnection.query("SELECT id FROM users WHERE username = 'Test';")
-      expect(User.sign_in(username: "Test", password: "Test")).to eq result[0]['id']
+    it 'Returns User object if user password is correct' do
+      test_user = User.sign_up(username: "Test", password: "Test", phone_no: "test", email: "test@test.com")
+
+      expect(User.sign_in(username: "Test", password: "Test").id).to eq test_user.id
     end
 
     it 'Returns nil if user password is incorrect' do

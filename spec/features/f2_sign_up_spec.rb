@@ -6,7 +6,7 @@ feature 'user able to sign up' do
     expect(page.current_path).to eq '/sign_up'
   end
 
-  scenario '- user to enter details adn submit' do
+  scenario '- user to enter details and submit' do
     visit '/'
     click_button('Sign Up')
     fill_in('username', with: 'Ol Bob')

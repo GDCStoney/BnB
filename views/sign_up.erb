@@ -1,4 +1,17 @@
+<% flash.keys.each do |type| %>
+  <div data-alert class="flash <%= type %> alert-box radius">
+    <%= flash[type] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
+
 <html>
+<header>
+  <form action='/'>
+    <input type='submit' value='Go Back'>
+  </form>
+</header>
+<body>
   <form action="/sign_up" method="post">
     <input type="text" name="username" placeholder="Name" maxlength="20">
     <input type="text" name="email" placeholder="Email" maxlength="50">
@@ -6,4 +19,5 @@
     <input type="password" name="password" placeholder="Password">
     <input type="submit" name="submit" value="Submit">
   </form>
+</body>
 </html>
