@@ -2,8 +2,8 @@ require_relative 'database_connection'
 
 class Listing
 
-  attr_accessor name:, price:, description:, available_dates:
-  attr_reader id:, host_id:
+  attr_accessor :name, :price, :description, :available_dates
+  attr_reader :id, :host_id
 
   def initialize(id:, name:, price:, description:, host_id:, start_date:, end_date:)
     @id = id
@@ -26,8 +26,12 @@ class Listing
     end
   end
 
-  def availibility?(start_date, end_date)
-        
+  def self.get_available_dates
+
+  end
+
+  def availability?(start_date, end_date)
+    
   end
 
 end

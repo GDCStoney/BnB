@@ -18,6 +18,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+require_relative 'test_setup'
 
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -38,7 +39,7 @@ Capybara.app = BnB
 
 RSpec.configure do |config|
   config.before(:each) do
-
+    clear_test_db
   end
 end
 
