@@ -9,7 +9,7 @@ feature 'user able to sign up' do
   scenario '- user to enter details adn submit' do
     visit '/'
     click_button('Sign Up')
-    fill_in('name', with: 'Ol Bob')
+    fill_in('username', with: 'Ol Bob')
     fill_in('email', with: 'OlBob@hickorydock.com')
     fill_in('phone', with: '0155566666')
     fill_in('password', with: 'damnImfine')

@@ -1,5 +1,6 @@
 require 'Sinatra'
 require 'pg'
+require_relative './lib/user'
 require './lib/database_connection_setup'
 
 class BnB < Sinatra::Base
@@ -8,13 +9,15 @@ class BnB < Sinatra::Base
 
   get '/' do
     # use session[:username] to determine view conent
-    @username = session['username']
+    @user = session['user']
     erb :homepage
   end
 
   post '/' do
     # determine if username/password is correct
-    session[:username] = params[:username]
+    user_id = User.sign_in(username: params[:username], password: params[:password])
+    p user_id.inspect
+    session[:user] = User.find(id: user_id)
     redirect '/' # with session variable of username/ID
   end
 
@@ -23,7 +26,14 @@ class BnB < Sinatra::Base
   end
 
   post '/sign_up' do
-    session[:username] = params[:email]
+    @new_user = User.sign_up(username: params[:username], password: params[:password], phone_no: params[:phone], email: params[:email])
+    if !@new_user
+      sinatra::flash 'Username taken, please try again'
+      redirect '/sign_up'
+    else
+      session[:user] = @new_user
+    end
+
     redirect '/'
   end
 end

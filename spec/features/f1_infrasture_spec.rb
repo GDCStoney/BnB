@@ -20,8 +20,10 @@ feature 'User screen changes once signed in' do
   scenario '- new button appears' do
     visit '/'
     expect(page).not_to have_selector(:id, 'signed_in')
+    add_bob_to_db
 
     fill_in('username', with: 'Ol Bob')
+    fill_in('password', with: 'damnImfine')
     click_button('Sign In')
 
     expect(page.current_path).to eq '/'
