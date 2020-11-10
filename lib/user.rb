@@ -48,20 +48,6 @@ class User
     User.new(result[0]['id'], result[0]['username'], result[0]['phone_no'], result[0]['email'])
   end
 
-  # true if signed in false if not
-  def self.member?
-    if @current_user != nil
-      true
-    else
-      false
-    end
-  end
-
-  # returns ID of current user
-  def self.current_user
-    @current_user
-  end
-
   private
   # returns false if username exists and true if not
   def self.check_username_taken(username:)

@@ -41,6 +41,11 @@
           null,
           2,
           null,
+          null,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -149,7 +154,6 @@
       "/Users/gstoney2/projects/Makers/BnB/lib/database_connection_setup.rb": {
         "lines": [
           1,
-          null,
           1,
           1,
           null,
@@ -162,6 +166,7 @@
           1,
           1,
           1,
+          null,
           1,
           1,
           1,
@@ -224,7 +229,6 @@
           1,
           1,
           1,
-          1,
           null,
           1,
           1,
@@ -257,6 +261,9 @@
           1,
           1,
           1,
+          10,
+          10,
+          5,
           null,
           null,
           1,
