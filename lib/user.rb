@@ -21,8 +21,10 @@ class User
   end
 
   def self.sign_in(username:, password:)
+    p username.inspect
     return nil if self.check_username_taken(username: username)
     result = DatabaseConnection.query("SELECT * FROM users WHERE username = '#{username}';")
+    p result.inspect
     if BCrypt::Password.new(result[0]['password']) == password
       result[0]['id']
     else
@@ -40,6 +42,8 @@ class User
 
   # returns user object with details from given ID
   def self.find(id:)
+    p id.inspect
+    p id.to_s.inspect
     result = DatabaseConnection.query("SELECT * FROM users WHERE id = #{id.to_s};")
     User.new(result[0]['id'], result[0]['username'], result[0]['phone_no'], result[0]['email'])
   end

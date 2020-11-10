@@ -4,12 +4,13 @@ Welcome to the BEST Beaches and Stream BnB listing!
   <input type='submit' value='Sign Up' id='sign_up' name='sign_up'>
 </form>
 <form action='/' method='post'>
-  <% if @username %>
+  <% if @user %>
     <input type='submit' id='signed_in' value ='Signed in'> :
-    <input type='text' name='signedin_user' placeholder='<%= @username %>'>
+    <input type='text' name='signedin_user' placeholder='<%= @user.username %>'>
     <input type="text" id="sign_out" value="Sign Out">
   <% else %>
     <input type='text' name='username' placeholder='User Name'>
+    <input type="password" name="password" placeholder="Password">
     <input type='submit' value='Sign In' id='sign_in' name='sign_in'>
   <% end %>
 </form>
