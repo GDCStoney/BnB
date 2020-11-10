@@ -1,4 +1,5 @@
 require_relative 'database_connection'
+require 'date'
 
 class Listing
 
@@ -11,7 +12,7 @@ class Listing
     @price = price
     @description = description
     @host_id = host_id
-    @available_dates = [start_date, end_date]
+    @available_dates = [Date.parse(start_date), Date.parse(end_date)]
   end
 
   def self.create(name:, price:, description:, host_id:, start_date:, end_date:)
@@ -31,12 +32,35 @@ class Listing
     end
   end
 
-  # def self.get_available_dates
-  #
-  # end
-  #
-  # def availability?(start_date, end_date)
-  #
-  # end
+  def availability?(start_date, end_date)
+    start_date = Date.parse(start_date)
+    end_date = Date.parse(end_date)
+    if ((start_date.mjd - @available_dates[0].mjd) >= 0) && ((end_date.mjd - @available_dates[0].mjd) > 0)
+      # check both before the end available date
+      if ((@available_dates[1].mjd - start_date.mjd) > 0) && ((@available_dates[1].mjd - end_date.mjd) >= 0)
+        bookings = self.get_bookings(id: self.id)
+        if bookings.length > 0
+          bookings.each do |booking|
+            if (start_date > booking.start_date && start_date < booking.end_date) || (end_date > booking.start_date && end_date < booking.end_date)
+              false
+            end
+          end
+          true
+        end
+      else
+        false
+      end
+    else
+      false
+    end
+  end
+
+  private
+  def self.get_bookings(id:)
+    result = DatabaseConnection.query("SELECT * FROM bookings WHERE listing_id = #{id};")
+    result.map do |booking|
+      Booking.new(id: result[0]['id'], listing_id: result[0]['listing_id'], user_id: result[0]['user_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date' price_total: result[0]['price_total'], confirmation: result[0]['confirmation'])
+    end
+  end
 
 end
