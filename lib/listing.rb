@@ -27,7 +27,7 @@ class Listing
   end
 
   def self.get_available_dates
-
+    
   end
 
   def availability?(start_date, end_date)
