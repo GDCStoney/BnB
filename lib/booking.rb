@@ -2,6 +2,9 @@ require_relative 'database_connection'
 require 'date'
 class Booking
 
+  attr_reader :id, :listing_id, :user_id, :price_total
+  attr_accessor :start_date, :end_date, :confirmation
+
   def initialize(id:, listing_id:, user_id:, start_date:, end_date:, price_total:, confirmation:)
     @id = id
     @listing_id = listing_id
@@ -31,5 +34,5 @@ class Booking
     end
   end
 
-  
+
 end
