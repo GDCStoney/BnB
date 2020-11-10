@@ -21,9 +21,4 @@ class BnB < Sinatra::Base
   get '/sign_up' do
 
   end
-
-  get '/test' do
-    @username = session['username']
-    erb :homepage
-  end
 end
