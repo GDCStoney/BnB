@@ -19,6 +19,11 @@ class BnB < Sinatra::Base
   end
 
   get '/sign_up' do
+    erb :sign_up
+  end
 
+  post '/sign_up' do
+    session[:username] = params[:email]
+    redirect '/'
   end
 end
