@@ -1,15 +1,15 @@
 <html>
 Welcome to the BEST Beaches and Stream BnB listing!
 <form action='/sign_up'>
-  <input type='submit' value='Sign Up' name='sign_up'>
+  <input type='submit' value='Sign Up' id='sign_up' name='sign_up'>
 </form>
 <form action='/' method='post'>
   <% if @username %>
-    <input type='submit' value ='Signed in'> :
+    <input type='submit' id='signed_in' value ='Signed in'> :
     <input type='text' name='signedin_user' placeholder='<%= @username %>'>
   <% else %>
     <input type='text' name='username' placeholder='User Name'>
-    <input type='submit' value='Sign In' name='sign_in'>
+    <input type='submit' value='Sign In' id='sign_in' name='sign_in'>
   <% end %>
 </form>
 </html>

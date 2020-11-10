@@ -1,6 +1,6 @@
 require 'Sinatra'
 require 'pg'
-require 'database_connection_setup'
+require './lib/database_connection_setup'
 
 class BnB < Sinatra::Base
   enable :sessions

@@ -7,8 +7,8 @@ feature 'User is able to access homepage' do
 
 end
 
-feature 'User is able to see sign up button' do
-  scenario 'user can click sign up button' do
+feature 'User is able to click sign up button' do
+  scenario 'user goes to sign_up screen' do
     visit '/'
     click_button('Sign Up')
 
@@ -19,10 +19,12 @@ end
 feature 'User screen changes once signed in' do
   scenario '- new button appears' do
     visit '/'
+    expect(page).not_to have_selector(:id, 'signed_in')
+
     fill_in('username', with: 'Ol Bob')
     click_button('Sign In')
 
     expect(page.current_path).to eq '/'
-    expect(page.find_button('Signed in')).to be_truthy
+    expect(page).to have_selector(:id, 'signed_in')
   end
 end
