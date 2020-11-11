@@ -46,4 +46,7 @@ class BnB < Sinatra::Base
   get '/calendar/simple' do
     erb :calendar_simple
   end
+  get '/calendar/html' do
+    erb :calendar_html
+  end
 end
