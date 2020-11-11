@@ -42,7 +42,16 @@ class BnB < Sinatra::Base
     else
       session[:user] = @new_user
     end
+    redirect '/'
+  end
 
+  get '/listing/edit' do
+    @listing = Listing.find(id: params[:id])
+    erb :listing_edit
+  end
+
+  post '/listing/edit' do
+    @listing = Listing.update(name: params[:name], description: params[:description], price: params[:price], start_date: params[:start_date], end_date: params[:end_date], id: params[:id])
     redirect '/'
   end
 
