@@ -5,6 +5,10 @@ def create_user
   DatabaseConnection.query("INSERT INTO users (id, username, password, email, phone_no) VALUES (1, 'Test', 'Test', 'test@test.com', '11111111111');")
 end
 
+def create_second_user
+  DatabaseConnection.query("INSERT INTO users (id, username, password, email, phone_no) VALUES (2, 'Test', 'Test', 'test@test.com', '11111111111');")
+end
+
 def create_booking
   start_date = '2020-12-25'
   end_date = '2020-12-28'
