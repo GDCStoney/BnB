@@ -16,7 +16,8 @@ class Listing
   end
 
   def self.create(name:, price:, description:, host_id:, start_date:, end_date:)
-    result = DatabaseConnection.query("INSERT INTO listings(name, price, description, host_id, start_date, end_date) VALUES('#{name}', #{price}, '#{description}', #{host_id}, '#{start_date}', '#{end_date}') RETURNING id, name, price, description, host_id, start_date, end_date;")
+    result = DatabaseConnection.query("INSERT INTO listings(name, price, description,
+      host_id, start_date, end_date) VALUES('#{name}', #{price}, '#{description}', #{host_id}, '#{start_date}', '#{end_date}') RETURNING id, name, price, description, host_id, start_date, end_date;")
     Listing.new(id: result[0]['id'], name: result[0]['name'], price: result[0]['price'], description: result[0]['description'], host_id: result[0]['host_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'])
   end
 
@@ -28,7 +29,7 @@ class Listing
   def self.all
     result = DatabaseConnection.query("SELECT * FROM listings;")
     result.map do |listing|
-      Listing.new(id: listing['id'], name: listing['name'], price: listing['price'], description: listing['description'], host_id: listing[host_id], start_date: listing['start_date'], end_date: listing['end_date'])
+      Listing.new(id: listing['id'], name: listing['name'], price: listing['price'], description: listing['description'], host_id: listing['host_id'], start_date: listing['start_date'], end_date: listing['end_date'])
     end
   end
 
@@ -59,7 +60,7 @@ class Listing
   def self.get_bookings(id:)
     result = DatabaseConnection.query("SELECT * FROM bookings WHERE listing_id = #{id};")
     result.map do |booking|
-      Booking.new(id: result[0]['id'], listing_id: result[0]['listing_id'], user_id: result[0]['user_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date' price_total: result[0]['price_total'], confirmation: result[0]['confirmation'])
+      Booking.new(id: result[0]['id'], listing_id: result[0]['listing_id'], user_id: result[0]['user_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'], price_total: result[0]['price_total'], confirmation: result[0]['confirmation'])
     end
   end
 
