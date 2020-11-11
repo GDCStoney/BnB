@@ -7,6 +7,7 @@ gem 'pg'
 gem 'bcrypt'
 gem 'twilio-ruby'
 gem "simple_calendar", "~> 2.0"
+gem "calendar_helper"
 
 group :test do
   gem 'capybara'

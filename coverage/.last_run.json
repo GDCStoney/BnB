@@ -1,5 +1,9 @@
 {
   "result": {
+<<<<<<< HEAD
     "covered_percent": 89.53
+=======
+    "covered_percent": 90.64
+>>>>>>> upstream/main
   }
 }
