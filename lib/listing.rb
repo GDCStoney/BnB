@@ -16,13 +16,13 @@ class Listing
   end
 
   def self.create(name:, price:, description:, host_id:, start_date:, end_date:)
-    result = DatabaseConnection.query("INSERT INTO listings(name, price, description,
-      host_id, start_date, end_date) VALUES('#{name}', #{price}, '#{description}', #{host_id}, '#{start_date}', '#{end_date}') RETURNING id, name, price, description, host_id, start_date, end_date;")
+    result = DatabaseConnection.query("INSERT INTO listings(name, price, description, host_id, start_date, end_date) VALUES('#{name}', #{price}, '#{description}', #{host_id}, '#{start_date}', '#{end_date}') RETURNING id, name, price, description, host_id, start_date, end_date;")
     Listing.new(id: result[0]['id'], name: result[0]['name'], price: result[0]['price'], description: result[0]['description'], host_id: result[0]['host_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'])
   end
 
   def self.find(id:)
-    result = DatabaseConnection.query("SELECT * FROM listings WHERE id = '#{id}';")
+    result = DatabaseConnection.query("SELECT * FROM listings WHERE id = #{id};")
+    p result.inspect
     Listing.new(id: result[0]['id'], name: result[0]['name'], price: result[0]['price'], description: result[0]['description'], host_id: result[0]['host_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'])
   end
 
@@ -33,6 +33,7 @@ class Listing
     end
   end
 
+  # NOT SURE IF WE NEED THIS
   def availability?(start_date, end_date)
     start_date = Date.parse(start_date)
     end_date = Date.parse(end_date)
