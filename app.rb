@@ -39,4 +39,14 @@ class BnB < Sinatra::Base
 
     redirect '/'
   end
+
+  get '/calendar/trial' do
+    erb :calendar_trial
+  end
+  get '/calendar/simple' do
+    erb :calendar_simple
+  end
+  get '/calendar/html' do
+    erb :calendar_html
+  end
 end

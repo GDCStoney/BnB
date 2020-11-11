@@ -35,6 +35,7 @@
         <td style="width: 100px; max-height: 75px; border-style: ridge; padding: 5px; margin: 3px">
         </td>
         <td>
+          <h4><%= listing.name %></h4>
           <p><%= listing.description %></p>
         </td>
       </tr>
@@ -49,7 +50,7 @@
             <input type='submit' value='Book'>
           </form>
         </td>
-        <td>
+        <td style="width: 50px">
           <form action='/booking/delete' style="margin-block-end: 0px">
             <input type='submit' value='Delete'>
           </form>
