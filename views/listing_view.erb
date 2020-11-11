@@ -1,0 +1,19 @@
+<body>
+  <h1> <%=@listing.name%> </h1>
+  <a href="/">Back</a>
+  <div id="image">
+    <p>IMAGE</p>
+  </div>
+  <h3> <%= @listing.description %> </h3>
+  <h3> Price per night: £<%= @listing.price %>0 </h3>
+  <h3>Unavailable dates:</h3>
+  <% @taken_dates.each do |day| %>
+    <%= day[0] %> to <%= day[1]%>,
+  <%end%>
+  
+  <form action="/booking_manager" method="post">
+    <input type="date" name="start_date" min=<%=@listing.available_dates[0]%> max=<%=@listing.available_dates[1]%>>
+    <input type="date" name="end_date" min=<%=@listing.available_dates[0]%> max=<%=@listing.available_dates[1]%>>
+    <input type="submit" value="Submit booking">
+  </form>
+</body>

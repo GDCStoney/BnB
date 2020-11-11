@@ -1,14 +1,20 @@
 require 'sinatra'
 require 'sinatra/flash'
 require 'pg'
+require 'calendar_helper'
 require_relative './lib/user'
 require_relative './lib/listing'
 require './lib/database_connection_setup'
+require 'date'
 
 class BnB < Sinatra::Base
   register Sinatra::Flash
   enable :sessions
   set :session_secret, 'here be turtles'
+
+  helpers do
+    include CalendarHelper
+  end
 
   get '/' do
     # use session[:username] to determine view conent
@@ -49,13 +55,16 @@ class BnB < Sinatra::Base
     redirect '/'
   end
 
-  get '/calendar/trial' do
-    erb :calendar_trial
+  get '/listing/:id' do
+    @taken_dates = []
+    bookings = Listing.get_bookings(id: params[:id])
+    bookings.each do |booking|
+      @taken_dates << [booking.start_date, booking.end_date]
+    end
+    @listing = Listing.find(params[:id])
+    # Hard coded @listing for testing:
+    # @listing = Listing.create(name: "Test listing", price: 40.00, description: "This is a very nice house.", host_id: 1, start_date: "2020-12-25", end_date: "2020-12-30")
+    erb :listing_view
   end
-  get '/calendar/simple' do
-    erb :calendar_simple
-  end
-  get '/calendar/html' do
-    erb :calendar_html
-  end
+ 
 end

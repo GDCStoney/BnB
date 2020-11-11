@@ -9,8 +9,8 @@ class Booking
     @id = id
     @listing_id = listing_id
     @user_id = user_id
-    @start_date = Date.parse(start_date)
-    @end_date = Date.parse(end_date)
+    @start_date = start_date
+    @end_date = end_date
     @price_total = price_total
     @confirmation = confirmation
   end
