@@ -13,7 +13,6 @@ class Booking
     @end_date = Date.parse(end_date)
     @price_total = price_total
     @confirmation = confirmation
-
   end
 
   def self.create(listing_id:, user_id:, start_date:, end_date:, price:, confirmation:)

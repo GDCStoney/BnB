@@ -1,6 +1,7 @@
 # Alternate BnB #
 ## Contents: ##
   - [User stories](#user-stories)
+  - [Domain model](#domain-model)
   - [Initial Interface Design work](./docs/interface.md)
   - [Database Discussion](./docs/database_many_to_many.md)
 

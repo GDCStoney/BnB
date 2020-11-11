@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/giorgio/Projects/BnB/app.rb": {
+      "/Users/dan/Projects/BnB/app.rb": {
         "lines": [
           1,
           1,
@@ -47,7 +47,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/lib/user.rb": {
+      "/Users/dan/Projects/BnB/lib/user.rb": {
         "lines": [
           1,
           1,
@@ -108,7 +108,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/lib/database_connection.rb": {
+      "/Users/dan/Projects/BnB/lib/database_connection.rb": {
         "lines": [
           1,
           null,
@@ -131,7 +131,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/lib/listing.rb": {
+      "/Users/dan/Projects/BnB/lib/listing.rb": {
         "lines": [
           1,
           1,
@@ -203,7 +203,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/lib/database_connection_setup.rb": {
+      "/Users/dan/Projects/BnB/lib/database_connection_setup.rb": {
         "lines": [
           1,
           null,
@@ -214,7 +214,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/spec/features/web_helpers.rb": {
+      "/Users/dan/Projects/BnB/spec/features/web_helpers.rb": {
         "lines": [
           1,
           2,
@@ -234,7 +234,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/spec/booking_spec.rb": {
+      "/Users/dan/Projects/BnB/spec/booking_spec.rb": {
         "lines": [
           1,
           1,
@@ -270,7 +270,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/lib/booking.rb": {
+      "/Users/dan/Projects/BnB/lib/booking.rb": {
         "lines": [
           1,
           1,
@@ -312,7 +312,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/spec/db_helpers.rb": {
+      "/Users/dan/Projects/BnB/spec/db_helpers.rb": {
         "lines": [
           1,
           1,
@@ -336,7 +336,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/spec/features/f1_infrasture_spec.rb": {
+      "/Users/dan/Projects/BnB/spec/features/f1_infrasture_spec.rb": {
         "lines": [
           1,
           1,
@@ -373,7 +373,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/spec/features/f2_sign_up_spec.rb": {
+      "/Users/dan/Projects/BnB/spec/features/f2_sign_up_spec.rb": {
         "lines": [
           1,
           1,
@@ -398,7 +398,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/spec/features/f3_sign_in_spec.rb": {
+      "/Users/dan/Projects/BnB/spec/features/f3_sign_in_spec.rb": {
         "lines": [
           1,
           1,
@@ -417,7 +417,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/spec/listing_spec.rb": {
+      "/Users/dan/Projects/BnB/spec/listing_spec.rb": {
         "lines": [
           1,
           1,
@@ -451,7 +451,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/spec/user_spec.rb": {
+      "/Users/dan/Projects/BnB/spec/user_spec.rb": {
         "lines": [
           1,
           1,
@@ -495,6 +495,6 @@
         ]
       }
     },
-    "timestamp": 1605097185
+    "timestamp": 1605101182
   }
 }
