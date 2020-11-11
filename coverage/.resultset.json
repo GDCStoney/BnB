@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/dan/Projects/BnB/app.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/app.rb": {
         "lines": [
           1,
           1,
@@ -44,10 +44,25 @@
           null,
           3,
           null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
           null
         ]
       },
-      "/Users/dan/Projects/BnB/lib/user.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/lib/user.rb": {
         "lines": [
           1,
           1,
@@ -108,7 +123,7 @@
           null
         ]
       },
-      "/Users/dan/Projects/BnB/lib/database_connection.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/lib/database_connection.rb": {
         "lines": [
           1,
           null,
@@ -121,7 +136,7 @@
           null,
           null,
           1,
-          54,
+          78,
           null,
           null,
           1,
@@ -142,57 +157,56 @@
           1,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
           null,
           null,
           1,
-          0,
-          null,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
+          2,
+          2,
           null,
           null,
           1,
-          15,
-          15,
-          0,
-          null,
+          1,
+          1,
+          1,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
-          0,
+          17,
+          17,
+          2,
           null,
           null,
           null,
           null,
           1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
           1,
           1,
           0,
@@ -204,7 +218,7 @@
           null
         ]
       },
-      "/Users/dan/Projects/BnB/lib/database_connection_setup.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/lib/database_connection_setup.rb": {
         "lines": [
           1,
           null,
@@ -215,7 +229,7 @@
           null
         ]
       },
-      "/Users/dan/Projects/BnB/spec/features/web_helpers.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/spec/features/web_helpers.rb": {
         "lines": [
           1,
           2,
@@ -235,7 +249,7 @@
           null
         ]
       },
-      "/Users/dan/Projects/BnB/spec/booking_spec.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/spec/booking_spec.rb": {
         "lines": [
           1,
           1,
@@ -271,7 +285,7 @@
           null
         ]
       },
-      "/Users/dan/Projects/BnB/lib/booking.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/lib/booking.rb": {
         "lines": [
           1,
           1,
@@ -288,7 +302,6 @@
           5,
           5,
           5,
-          null,
           null,
           null,
           1,
@@ -313,7 +326,7 @@
           null
         ]
       },
-      "/Users/dan/Projects/BnB/spec/db_helpers.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/spec/db_helpers.rb": {
         "lines": [
           1,
           1,
@@ -337,7 +350,7 @@
           null
         ]
       },
-      "/Users/dan/Projects/BnB/spec/features/f1_infrasture_spec.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/spec/features/f1_infrasture_spec.rb": {
         "lines": [
           1,
           1,
@@ -374,7 +387,7 @@
           null
         ]
       },
-      "/Users/dan/Projects/BnB/spec/features/f2_sign_up_spec.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/spec/features/f2_sign_up_spec.rb": {
         "lines": [
           1,
           1,
@@ -399,7 +412,7 @@
           null
         ]
       },
-      "/Users/dan/Projects/BnB/spec/features/f3_sign_in_spec.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/spec/features/f3_sign_in_spec.rb": {
         "lines": [
           1,
           1,
@@ -418,7 +431,7 @@
           null
         ]
       },
-      "/Users/dan/Projects/BnB/spec/listing_spec.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/spec/listing_spec.rb": {
         "lines": [
           1,
           1,
@@ -452,7 +465,7 @@
           null
         ]
       },
-      "/Users/dan/Projects/BnB/spec/user_spec.rb": {
+      "/Users/gstoney2/projects/Makers/BnB/spec/user_spec.rb": {
         "lines": [
           1,
           1,
@@ -496,6 +509,6 @@
         ]
       }
     },
-    "timestamp": 1605090114
+    "timestamp": 1605107665
   }
 }

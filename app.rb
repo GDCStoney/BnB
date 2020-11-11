@@ -43,10 +43,15 @@ class BnB < Sinatra::Base
   get '/calendar/trial' do
     erb :calendar_trial
   end
+
   get '/calendar/simple' do
     erb :calendar_simple
   end
+  
   get '/calendar/html' do
+    @today = Time.now
+    @booked = [1,4,5,15,22]
+    @confirmation = [2,6,17,21]
     erb :calendar_html
   end
 end
