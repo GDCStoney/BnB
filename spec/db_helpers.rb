@@ -2,7 +2,7 @@ require_relative '../lib/database_connection'
 require 'date'
 
 def create_user
-  DatabaseConnection.query("INSERT INTO users (username, password, email, phone_no) VALUES ('Test', 'Test', 'test@test.com', '11111111111');")
+  DatabaseConnection.query("INSERT INTO users (id, username, password, email, phone_no) VALUES (1, 'Test', 'Test', 'test@test.com', '11111111111');")
 end
 
 def create_booking
@@ -12,5 +12,5 @@ def create_booking
 end
 
 def create_listing
-  DatabaseConnection.query("INSERT INTO listings (name, price, description, host_id) VALUES ('Test', 50.00, 'This is very nice house', 1);")
+  DatabaseConnection.query("INSERT INTO listings VALUES (1, 'Test', 40.00, 'This is very nice house', 1, '2020-12-20', '2020-12-30');")
 end
