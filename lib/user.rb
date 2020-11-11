@@ -40,7 +40,7 @@ class User
 
   # returns user object with details from given ID
   def self.find(id:)
-    result = DatabaseConnection.query("SELECT * FROM users WHERE id = #{id.to_s};")
+    result = DatabaseConnection.query("SELECT * FROM users WHERE id = #{id};")
     User.new(result[0]['id'], result[0]['username'], result[0]['phone_no'], result[0]['email'])
   end
 
