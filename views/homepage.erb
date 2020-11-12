@@ -2,12 +2,18 @@
 <html>
 <head>
   <link href="/css/bootstrap.css" rel="stylesheet">
-  <link href="/css/bootstrap-theme.css" rel="stylesheet"
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
+  <link href="/css/logo.css" rel="stylesheet">
 </head>
 <body style="padding-top: 60px">
 <h1 style='margin: 0 auto; text-align: center'>
-  Welcome to the BEST Beaches and Stream BnB listing!
+  Welcome to the BEST Beaches Supreme BnB listing!
 </h1>
+<br><br>
+<div id="logo_box">
+  <img class="logo" src="images/Beaches_Supreme-2-removebg-preview.png" style='margin-left: 200px;'>
+  <img class="logo" src="images/Beaches_Supreme-2-removebg-preview.png" style='transform-origin: 100%;'>
+</div>
 <br><br>
 <table style='margin: 0 auto; text-align: center'>
   <tr>
@@ -33,6 +39,21 @@
     </td>
   </tr>
 </table>
+<br><br>
+<table style='margin: 0 auto; text-align: center'>
+<tr>
+<td>
+  <form class="" action="/search" method="post">
+  <input type="text" name="search" placeholder="Search">
+  <select class="" name="field">
+    <option value="name">Name</option>
+    <option value="description">Description</option>
+  </select>
+  <input type="submit" name="submit" value="Search">
+  </form>
+</td>
+</tr>
+</table>
 <br>
 <div style='height: 600px; overflow: scroll'>
 <% @listings.each do |listing| %>
@@ -43,9 +64,9 @@
         </td>
         <td style="padding: 5px">
           <h4><%= listing.name %></h4>
-          <p><%= listing.description %></p>
+          <p><%= listing.description %> </p>
         </td>
-        <td></td>
+        <td>: <strong> £<%= listing.price %> per night</strong></td>
       </tr>
       <tr>
         <td>
@@ -57,20 +78,40 @@
           <% end %>
         </td>
         <td>
-          <form action='listing/book' style="margin-block-end: 0px; text-align: center">
+          <form action='listing/<%= listing.id %>' style="margin-block-end: 0px; text-align: center">
+            <input type="hidden" name="id" value='<%= listing.id %>'>
             <input type='submit' id='book' value='Book'>
           </form>
         </td>
         <td style="width: 50px">
+          <% if @user %>
           <form action='/listing/delete' style="margin-block-end: 0px">
+            <input type="hidden" name='id' value='<%= listing.id %>'>
             <input type='submit' id='delete' value='Delete'>
           </form>
+          <% end %>
         </td>
       </tr>
     </table>
   </div>
 <% end %>
 </div>
+<br>
+<table style='margin: 0 auto; text-align: center'>
+    <tr>
+      <td>
+        <form class="" action="/listing/add" method="get">
+          <input type="submit" name="add" value="New Listing">
+        </form>
+      </td>
+      <td>
+        <form class="" action="/" method="get">
+            <input type="submit" name="view" value="My Listings">
+        </form>
+      </td>
+    </tr>
+</table>
+<br>
 
 <footer style='width: 75%; text-align: center; margin: 0 auto'>This is some blurb to show the footer region</footer>
 

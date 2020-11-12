@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Confirmation Required for the Delete of a Listing</h1>
+  <br>
+  <form action='/listing/delete' method='post'>
+    <input type="text" name="name" value="<%= @listing.name %>">
+    <input type="text" name="description" value="<%= @listing.description %>">
+    <input type="hidden" name="id" value="<%= @listing.id %>">
+    <input type="submit" value="CONFIRMED">
+  </form>
+  <form action='/'>
+    <input type="submit" name="cancel" value="Cancel">
+  </form>
+</body>
+</html>

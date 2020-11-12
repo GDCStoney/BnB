@@ -16,7 +16,9 @@ class Booking
   end
 
   def self.create(listing_id:, user_id:, start_date:, end_date:, price:, confirmation:)
-    price_total = (Date.parse(end_date).mjd - Date.parse(start_date).mjd) * price
+    price_total = (Date.parse(end_date).mjd - Date.parse(start_date).mjd) * price.to_f
+    p (Date.parse(end_date).mjd - Date.parse(start_date).mjd)
+    p price_total
     result = DatabaseConnection.query("INSERT INTO bookings(listing_id, user_id, start_date, end_date, price_total, confirmation) VALUES(#{listing_id}, #{user_id}, '#{start_date}', '#{end_date}', #{price_total}, #{confirmation}) RETURNING id, listing_id, user_id, start_date, end_date, price_total, confirmation;")
     Booking.new(id: result[0]['id'], listing_id: result[0]['listing_id'], user_id: result[0]['user_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'], price_total: result[0]['price_total'], confirmation: result[0]['confirmation'])
   end
@@ -29,8 +31,20 @@ class Booking
   def self.all
     result = DatabaseConnection.query("SELECT * FROM bookings;")
     result.map do |booking|
-      Booking.new(id: result[0]['id'], listing_id: result[0]['listing_id'], user_id: result[0]['user_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'], price_total: result[0]['price_total'], confirmation: result[0]['confirmation'])
+      Booking.new(id: booking['id'], listing_id: booking['listing_id'], user_id: booking['user_id'], start_date: booking['start_date'], end_date: booking['end_date'], price_total: booking['price_total'], confirmation: booking['confirmation'])
     end
+  end
+
+  def self.update(id:, start_date:, end_date:)
+    booking = self.find(id: id)
+    listing = DatabaseConnection.query("SELECT * FROM listings WHERE id = #{booking.listing_id};")
+    price_total = (Date.parse(end_date).mjd - Date.parse(start_date).mjd) * listing[0]['price'].to_f
+    result = DatabaseConnection.query("UPDATE bookings SET start_date = '#{start_date}', end_date = '#{end_date}', price_total = #{price_total} WHERE id = #{id} RETURNING id, listing_id, user_id, start_date, end_date, price_total, confirmation;")
+    Booking.new(id: result[0]['id'], listing_id: result[0]['listing_id'], user_id: result[0]['user_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'], price_total: result[0]['price_total'], confirmation: result[0]['confirmation'])
+  end
+
+  def self.delete(id:)
+    DatabaseConnection.query("DELETE FROM bookings WHERE id= #{id};")
   end
 
   def self.get_unavailable_dates(listing_id:)
@@ -43,6 +57,13 @@ class Booking
       end
     end
     return unavailable_dates
+  end
+
+  def self.get_user_bookings(user_id:)
+    result = DatabaseConnection.query("SELECT * FROM bookings WHERE user_id = #{user_id};")
+    result.map do |booking|
+      Booking.new(id: booking['id'], listing_id: booking['listing_id'], user_id: booking['user_id'], start_date: booking['start_date'], end_date: booking['end_date'], price_total: booking['price_total'], confirmation: booking['confirmation'])
+    end
   end
 
 end

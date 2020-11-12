@@ -15,7 +15,7 @@ class BnB < Sinatra::Base
   get '/' do
     # use session[:username] to determine view conent
     @user = session[:user]
-    @listings = Listing.all
+    @listings = Listing.all(field: session[:field], search: session[:search])
     erb :homepage
   end
 
@@ -24,6 +24,18 @@ class BnB < Sinatra::Base
     @user = User.sign_in(username: params[:username], password: params[:password])
     session[:user] = @user
     redirect '/' # with session variable of username/ID
+  end
+  get '/clear/' do
+    session.clear
+  end
+  post '/search' do
+    session[:field] = params[:field]
+    session[:search] = params[:search]
+    redirect '/'
+  end
+
+  get '/listing/add' do
+    erb :add_listing
   end
 
   get '/sign_up' do
@@ -47,7 +59,18 @@ class BnB < Sinatra::Base
   end
 
   post '/listing/edit' do
-    @listing = Listing.update(name: params[:name], description: params[:description], price: params[:price], start_date: params[:start_date], end_date: params[:end_date], id: params[:id])
+    description_for_query = params[:description].gsub("'", "''")
+    @listing = Listing.update(name: params[:name], description: description_for_query, price: params[:price], start_date: params[:start_date], end_date: params[:end_date], id: params[:id])
+    redirect '/'
+  end
+
+  get '/listing/delete' do
+    @listing = Listing.find(id: params[:id])
+    erb :listing_delete_confirmation
+  end
+
+  post '/listing/delete' do
+    @listing = Listing.delete(id: params[:id])
     redirect '/'
   end
 
@@ -59,12 +82,41 @@ class BnB < Sinatra::Base
     erb :listing_view
   end
 
-  get '/calendar/bs_full' do
-    erb :calendar_bs_full
+  get '/booking/edit/:id' do
+    @booking = Booking.find(id: params[:id])
+    erb :booking_edit
   end
 
-  get '/calendar/bs_test' do
-    erb :calendar_bs_test
+  post '/booking/edit/:id' do
+    Booking.update(id: params[:id], start_date: params[:start_date], end_date: params[:end_date])
+    redirect '/'
+  end
+
+  get '/booking/delete/:id' do
+    @booking = Booking.find(id: params[:id])
+    erb :booking_delete_confirmation
+  end
+
+  post '/booking/delete/:id' do
+    Booking.delete(id: params[:id])
+    redirect '/'
+  end
+
+  post '/booking/manager/:id' do
+    user = session[:user]
+    listing = Listing.find(id: params[:listing_id])
+    Booking.create(listing_id: listing.id, user_id: user.id, start_date: params[:start_date], end_date: params[:end_date], price: listing.price, confirmation: false)
+    redirect '/booking/manager'
+  end
+
+  get '/booking/manager' do
+    @user = session[:user]
+    @bookings = Booking.get_user_bookings(user_id: @user.id)
+    @listings = []
+    @bookings.each do |booking|
+      @listings << Listing.find(id: booking.listing_id)
+    end
+    erb :booking_manager
   end
 
 end

@@ -1,0 +1,16 @@
+<html>
+<head>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Confirmation Required for the Delete of a Booking</h1>
+  <br>
+  <form action='/booking/delete/<%= @booking.id %>' method='post'>
+    <input type="submit" value="CONFIRM">
+  </form>
+  <form action='/'>
+    <input type="submit" name="cancel" value="Cancel">
+  </form>
+</body>
+</html>
