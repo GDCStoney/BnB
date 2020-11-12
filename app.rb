@@ -5,6 +5,7 @@ require_relative './lib/user'
 require_relative './lib/listing'
 require './lib/database_connection_setup'
 require 'date'
+require_relative './lib/booking'
 
 class BnB < Sinatra::Base
   register Sinatra::Flash
@@ -51,11 +52,7 @@ class BnB < Sinatra::Base
   end
 
   get '/listing/:id' do
-    @taken_dates = []
-    bookings = Listing.get_bookings(id: params[:id])
-    bookings.each do |booking|
-      @taken_dates << [booking.start_date, booking.end_date]
-    end
+    @taken_dates = Booking.get_unavailable_dates(listing_id: params[:id]).to_s.gsub('"',"")
     @listing = Listing.find(id: params[:id])
     # Hard coded @listing for testing:
     # @listing = Listing.create(name: "Test listing", price: 40.00, description: "This is a very nice house.", host_id: 1, start_date: "2020-12-25", end_date: "2020-12-30")
