@@ -33,5 +33,16 @@ class Booking
     end
   end
 
+  def self.get_unavailable_dates(listing_id:)
+    unavailable_dates = []
+    result = DatabaseConnection.query("SELECT * FROM bookings WHERE listing_id = #{listing_id};")
+    result.each do |booking|
+      dates = (Date.parse(booking['start_date'])..Date.parse(booking['end_date'])).to_a
+      dates.each do |date|
+        unavailable_dates << date.to_s
+      end
+    end
+    return unavailable_dates
+  end
 
 end
