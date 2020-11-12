@@ -9,10 +9,10 @@
 <h1 class="well" style='margin: 0 auto; text-align: center'>
   Welcome to the BEST Beaches Supreme BnB listing!
 </h1>
-<br><br>
+<br>
 <div id="logo_box">
-  <img class="logo" src="images/Beaches_Supreme-2-removebg-preview.png" style='margin-left: 200px;'>
-  <img class="logo" src="images/Beaches_Supreme-2-removebg-preview.png" style='transform-origin: 100%;'>
+  <img class="logo" src="images/Beaches_Supreme-2-removebg-preview.png" style='transform-origin: top left;'>
+  <img class="logo" src="images/Beaches_Supreme-2-removebg-preview.png" style='transform-origin: top right;'>
 </div>
 <br><br>
 <table style='margin: 0 auto; text-align: center'>
@@ -77,11 +77,13 @@
       </tr>
       <tr>
         <td>
-          <% if @user %>
+          <%if @user%>
+          <% if @user.id == listing.host_id %>
           <form action='/listing/edit' style="margin-block-end: 0px">
             <input type='hidden' value='<%= listing.id %>' name='id'>
             <input type='submit' id='edit' value='Edit'>
           </form>
+          <% end %>
           <% end %>
         </td>
         <td>
@@ -91,11 +93,13 @@
           </form>
         </td>
         <td style="width: 50px">
-          <% if @user %>
+          <%if @user%>
+          <% if @user.id == listing.host_id %>
           <form action='/listing/delete' style="margin-block-end: 0px">
             <input type="hidden" name='id' value='<%= listing.id %>'>
             <input type='submit' id='delete' value='Delete'>
           </form>
+          <% end %>
           <% end %>
         </td>
       </tr>
