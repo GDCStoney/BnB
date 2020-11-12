@@ -33,6 +33,21 @@
     </td>
   </tr>
 </table>
+<table>
+<tr>
+<td>
+  <form class="" action="/search" method="post">
+  <input type="text" name="search" placeholder="Search">
+  <select class="" name="field">
+    <option value="name">Name</option>
+    <option value="description">Description</option>
+    <option value="price">Price</option>
+  </select>
+  <input type="submit" name="submit" value="Search">
+  </form>
+</td>
+</tr>
+</table>
 <br>
 <div style='height: 600px; overflow: scroll'>
 <% @listings.each do |listing| %>
@@ -57,14 +72,18 @@
           <% end %>
         </td>
         <td>
-          <form action='listing/book' style="margin-block-end: 0px; text-align: center">
+          <form action='listing/<%= listing.id %>' style="margin-block-end: 0px; text-align: center">
+            <input type="hidden" name="id" value='<%= listing.id %>'>
             <input type='submit' id='book' value='Book'>
           </form>
         </td>
         <td style="width: 50px">
+          <% if @user %>
           <form action='/listing/delete' style="margin-block-end: 0px">
+            <input type="hidden" name='id' value='<%= listing.id %>'>
             <input type='submit' id='delete' value='Delete'>
           </form>
+          <% end %>
         </td>
       </tr>
     </table>

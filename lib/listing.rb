@@ -37,6 +37,10 @@ class Listing
     end
   end
 
+  def self.delete(id:)
+    result = DatabaseConnection.query("DELETE FROM listings WHERE id= #{id};")
+  end
+
   # NOT SURE IF WE NEED THIS
   def availability?(start_date, end_date)
     start_date = Date.parse(start_date)
