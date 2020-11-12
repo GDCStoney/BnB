@@ -70,11 +70,40 @@ class BnB < Sinatra::Base
     erb :listing_view
   end
 
-  get '/calendar/bs_full' do
-    erb :calendar_bs_full
+  get '/booking/edit/:id' do
+    @booking = Booking.find(id: params[:id])
+    erb :booking_edit
   end
 
-  get '/calendar/bs_test' do
-    erb :calendar_bs_test
+  post '/booking/edit/:id' do
+    Booking.update(id: params[:id], start_date: params[:start_date], end_date: params[:end_date])
+    redirect '/'
+  end
+
+  get '/booking/delete/:id' do
+    @booking = Booking.find(id: params[:id])
+    erb :booking_delete_confirmation
+  end
+
+  post '/booking/delete/:id' do
+    Booking.delete(id: params[:id])
+    redirect '/'
+  end
+
+  post '/booking/manager/:id' do
+    user = session[:user]
+    listing = Listing.find(id: params[:listing_id])
+    Booking.create(listing_id: listing.id, user_id: user.id, start_date: params[:start_date], end_date: params[:end_date], price: listing.price, confirmation: false)
+    redirect '/booking/manager'
+  end
+
+  get '/booking/manager' do
+    @user = session[:user]
+    @bookings = Booking.get_user_bookings(user_id: @user.id)
+    @listings = []
+    @bookings.each do |booking|
+      @listings << Listing.find(id: booking.listing_id)
+    end
+    erb :booking_manager
   end
 end
