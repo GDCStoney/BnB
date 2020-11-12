@@ -52,11 +52,5 @@ class Listing
     end
   end
 
-  def self.get_bookings(id:)
-    result = DatabaseConnection.query("SELECT * FROM bookings WHERE listing_id = #{id};")
-    result.map do |booking|
-      Booking.new(id: result[0]['id'], listing_id: result[0]['listing_id'], user_id: result[0]['user_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'], price_total: result[0]['price_total'], confirmation: result[0]['confirmation'])
-    end
-  end
 
 end
