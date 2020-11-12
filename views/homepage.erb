@@ -8,6 +8,7 @@
 <h1 style='margin: 0 auto; text-align: center'>
   Welcome to the BEST Beaches and Stream BnB listing!
 </h1>
+<% session.clear %>
 <br><br>
 <table style='margin: 0 auto; text-align: center'>
   <tr>
@@ -41,7 +42,6 @@
   <select class="" name="field">
     <option value="name">Name</option>
     <option value="description">Description</option>
-    <option value="price">Price</option>
   </select>
   <input type="submit" name="submit" value="Search">
   </form>
@@ -58,9 +58,9 @@
         </td>
         <td style="padding: 5px">
           <h4><%= listing.name %></h4>
-          <p><%= listing.description %></p>
+          <p><%= listing.description %> </p>
         </td>
-        <td></td>
+        <td>: <strong> £<%= listing.price %> per night</strong></td>
       </tr>
       <tr>
         <td>

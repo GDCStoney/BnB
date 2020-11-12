@@ -15,7 +15,7 @@ class BnB < Sinatra::Base
   get '/' do
     # use session[:username] to determine view conent
     @user = session[:user]
-    @listings = Listing.all
+    @listings = Listing.all(field: session[:field], search: session[:search])
     erb :homepage
   end
 
@@ -24,6 +24,14 @@ class BnB < Sinatra::Base
     @user = User.sign_in(username: params[:username], password: params[:password])
     session[:user] = @user
     redirect '/' # with session variable of username/ID
+  end
+  get '/clear/' do
+    session.clear
+  end
+  post '/search' do
+    session[:field] = params[:field]
+    session[:search] = params[:search]
+    redirect '/'
   end
 
   get '/sign_up' do
