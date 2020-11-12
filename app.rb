@@ -34,6 +34,10 @@ class BnB < Sinatra::Base
     redirect '/'
   end
 
+  get '/listing/add' do
+    erb :add_listing
+  end
+
   get '/sign_up' do
     erb :sign_up
   end
