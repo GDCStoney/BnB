@@ -62,8 +62,6 @@ class BnB < Sinatra::Base
     erb :listing_view
   end
 
-<<<<<<< HEAD
-=======
   get '/calendar/bs_full' do
     erb :calendar_bs_full
   end
@@ -71,5 +69,5 @@ class BnB < Sinatra::Base
   get '/calendar/bs_test' do
     erb :calendar_bs_test
   end
->>>>>>> upstream/main
+
 end
