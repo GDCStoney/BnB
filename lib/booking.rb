@@ -29,7 +29,7 @@ class Booking
   def self.all
     result = DatabaseConnection.query("SELECT * FROM bookings;")
     result.map do |booking|
-      Booking.new(id: result[0]['id'], listing_id: result[0]['listing_id'], user_id: result[0]['user_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'], price_total: result[0]['price_total'], confirmation: result[0]['confirmation'])
+      Booking.new(id: booking['id'], listing_id: booking['listing_id'], user_id: booking['user_id'], start_date: booking['start_date'], end_date: booking['end_date'], price_total: booking['price_total'], confirmation: booking['confirmation'])
     end
   end
 
