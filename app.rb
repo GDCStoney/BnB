@@ -15,7 +15,8 @@ class BnB < Sinatra::Base
   get '/' do
     # use session[:username] to determine view conent
     @user = session[:user]
-    @listings = Listing.all(field: session[:field], search: session[:search])
+    session[:filter_listing] ? @my_listings = session[:user].id : @my_listings = nil
+    @listings = Listing.all(field: session[:field], search: session[:search], host_id: @my_listings)
     erb :homepage
   end
 
@@ -25,17 +26,20 @@ class BnB < Sinatra::Base
     session[:user] = @user
     redirect '/' # with session variable of username/ID
   end
+
+  post '/my_listings' do
+    session[:filter_listing] ? session[:filter_listing] = nil : session[:filter_listing] = params[:filter_listing]
+    redirect '/'
+  end
+
   get '/clear/' do
     session.clear
   end
+
   post '/search' do
     session[:field] = params[:field]
     session[:search] = params[:search]
     redirect '/'
-  end
-
-  get '/listing/add' do
-    erb :add_listing
   end
 
   get '/sign_up' do
@@ -51,6 +55,14 @@ class BnB < Sinatra::Base
       session[:user] = @new_user
     end
     redirect '/'
+  end
+
+  get '/listing/add' do
+    erb :add_listing
+  end
+
+  post '/listing/add' do
+
   end
 
   get '/listing/edit' do

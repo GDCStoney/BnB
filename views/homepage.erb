@@ -11,23 +11,30 @@
 <br><br>
 <table style='margin: 0 auto; text-align: center'>
   <tr>
-    <td>
+    <td style="vertical-align: bottom">
+      <% if !@user %>
       <form action='/sign_up'>
         <input type='submit' value='Sign Up' id='sign_up' name='sign_up'>
       </form>
+      <% end %>
     </td>
     <td>
       <% if @user %>
         <form action='/' method='post' style='text-align: center'>
-          <input type='submit' id='signed_in' value ='Signed in'> :
-          <input type='text' name='signedin_user' placeholder='<%= @user.username %>'>
-          <input type="text" id="sign_out" value="Sign Out">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-leaf"></span></span>
+            <input type='text' name='signedin_user' placeholder='<%= @user.username %>' style="text-align: center">
+            <input type="submit" id="sign_out" value="Sign Out">
+          </div>
         </form>
       <% else %>
         <form action='/' method='post' style="text-align: center">
-          <input type='text' name='username' placeholder='User Name'>
-          <input type="password" name="password" placeholder="Password">
-          <input type='submit' value='Sign In' id='sign_in' name='sign_in'>
+          <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input class="form-control" type='text' name='username' placeholder='User Name'>
+            <input class="form-control" type="password" name="password" placeholder="Password">
+          </div>
+            <input class="form-control" type='submit' value='Sign In' id='sign_in' name='sign_in'>
         </form>
       <% end %>
     </td>
@@ -91,20 +98,34 @@
 <% end %>
 </div>
 <br>
+<% if @user %>
 <table style='margin: 0 auto; text-align: center'>
     <tr>
-      <td>
+      <td style="width: 150px">
         <form class="" action="/listing/add" method="get">
           <input type="submit" name="add" value="New Listing">
         </form>
       </td>
-      <td>
-        <form class="" action="/" method="get">
-            <input type="submit" name="view" value="My Listings">
+      <td style="width: 150px">
+        <form class="" action="/my_listings" method="post">
+          <input type='hidden' name="filter_listing" value='true'>
+          <% if @my_listings %>
+            <input type="submit" name="view" value="All Listings">
+          <% else %>
+          <input type="submit" name="view" value="My Listings">
+          <% end %>
         </form>
+      </td>
+      <td style="width: 150px">
+        <% if @user %>
+          <form class="" action="/booking/manager">
+            <input type="submit" name="booking_manager" value="Booking Manager">
+          </form>
+        <% end %>
       </td>
     </tr>
 </table>
+<% end %>
 <br>
 
 <footer style='width: 75%; text-align: center; margin: 0 auto'>This is some blurb to show the footer region
