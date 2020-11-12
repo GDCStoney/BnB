@@ -6,6 +6,10 @@
   height: 300px;
 }
 
+#logo2 {
+  transform-origin: top right;
+}
+
 @keyframes grow{
   0% {height: 300px; width: 500px;}
   50% {height: 60px; width: 100px;}
