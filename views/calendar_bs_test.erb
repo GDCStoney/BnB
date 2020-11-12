@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link href="/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="/js/bootstrap-datepicker.js"></script>
+</head>
+<body>
+  <div class="container theme-showcase">
+    <h1>Date Picker</h1>
+  <div id="holder" class="row" ></div>
+  </div>
+
+  <div class="input-group date" data-provide="datepicker" style="width: 50%">
+      <input type="text" class="form-control">
+      <div class="input-group-addon">
+          <span class="glyphicon glyphicon-th"></span>
+      </div>
+  </div>
+  <div>
+    <form style="width: 50%; text-align: center">
+      <input class="datepicker" data-date-format="dd/mm/yyyy" data-provide="datepicker" data-date-dates-disabled="[10/11/2020,12/11/2020]">
+    </form>
+  </div>
+
+</body>
+</html>

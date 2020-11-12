@@ -11,7 +11,6 @@ class BnB < Sinatra::Base
   enable :sessions
   set :session_secret, 'here be turtles'
 
-
   get '/' do
     # use session[:username] to determine view conent
     @user = session[:user]
@@ -63,4 +62,14 @@ class BnB < Sinatra::Base
     erb :listing_view
   end
 
+<<<<<<< HEAD
+=======
+  get '/calendar/bs_full' do
+    erb :calendar_bs_full
+  end
+
+  get '/calendar/bs_test' do
+    erb :calendar_bs_test
+  end
+>>>>>>> upstream/main
 end
