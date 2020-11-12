@@ -46,7 +46,18 @@ class BnB < Sinatra::Base
   end
 
   post '/listing/edit' do
-    @listing = Listing.update(name: params[:name], description: params[:description], price: params[:price], start_date: params[:start_date], end_date: params[:end_date], id: params[:id])
+    description_for_query = params[:description].gsub("'", "''")
+    @listing = Listing.update(name: params[:name], description: description_for_query, price: params[:price], start_date: params[:start_date], end_date: params[:end_date], id: params[:id])
+    redirect '/'
+  end
+
+  get '/listing/delete' do
+    @listing = Listing.find(id: params[:id])
+    erb :listing_delete_confirmation
+  end
+
+  post '/listing/delete' do
+    @listing = Listing.delete(id: params[:id])
     redirect '/'
   end
 
