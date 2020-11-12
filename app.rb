@@ -56,7 +56,7 @@ class BnB < Sinatra::Base
     bookings.each do |booking|
       @taken_dates << [booking.start_date, booking.end_date]
     end
-    @listing = Listing.find(params[:id])
+    @listing = Listing.find(id: params[:id])
     # Hard coded @listing for testing:
     # @listing = Listing.create(name: "Test listing", price: 40.00, description: "This is a very nice house.", host_id: 1, start_date: "2020-12-25", end_date: "2020-12-30")
     erb :listing_view
