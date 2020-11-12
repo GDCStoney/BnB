@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sinatra/flash'
 require 'pg'
-require 'calendar_helper'
 require_relative './lib/user'
 require_relative './lib/listing'
 require './lib/database_connection_setup'
@@ -11,10 +10,6 @@ class BnB < Sinatra::Base
   register Sinatra::Flash
   enable :sessions
   set :session_secret, 'here be turtles'
-
-  helpers do
-    include CalendarHelper
-  end
 
   get '/' do
     # use session[:username] to determine view conent
@@ -67,4 +62,11 @@ class BnB < Sinatra::Base
     erb :listing_view
   end
 
+  get '/calendar/bs_full' do
+    erb :calendar_bs_full
+  end
+
+  get '/calendar/bs_test' do
+    erb :calendar_bs_test
+  end
 end
