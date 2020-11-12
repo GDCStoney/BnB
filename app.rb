@@ -62,7 +62,7 @@ class BnB < Sinatra::Base
   end
 
   post '/listing/add' do
-
+    
   end
 
   get '/listing/edit' do
