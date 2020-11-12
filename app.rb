@@ -104,7 +104,7 @@ class BnB < Sinatra::Base
 
   post '/booking/manager/:id' do
     user = session[:user]
-    listing = Listing.find(id: params[:listing_id])
+    listing = Listing.find(id: params[:id])
     Booking.create(listing_id: listing.id, user_id: user.id, start_date: params[:start_date], end_date: params[:end_date], price: listing.price, confirmation: false)
     redirect '/booking/manager'
   end
