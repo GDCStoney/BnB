@@ -4,13 +4,15 @@
   <link href="/css/bootstrap-theme.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Confirmation Required for the Delete of a Booking</h1>
+  <h1 class="well" style='margin: 0 auto; text-align: center'>
+    Confirmation Required for the Deletion of a Booking
+  </h1>
   <br>
   <form action='/booking/delete/<%= @booking.id %>' method='post'>
-    <input type="submit" value="CONFIRM">
+    <button type="submit" value="CONFIRM" class="btn btn-success btn-lg">CONFIRM</button>
   </form>
   <form action='/'>
-    <input type="submit" name="cancel" value="Cancel">
+    <button type="submit" name="cancel" value="Cancel" class="btn btn-danger btn-lg">CANCEL</button>
   </form>
 </body>
 </html>

@@ -3,6 +3,8 @@
 <head>
   <link href="/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
   <script src="/js/bootstrap.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -45,12 +47,12 @@
       <tr style="height: 15px"><td>  </td> </tr>
       <tr>
         <td colspan="2" style="width: 100%; text-align: centre">
-          <input type='submit' value='Add Listing'>
+          <button type='submit' value='Add Listing' class="btn btn-success">Add Listing</button>
         </td>
         </form>
         <td style="text-align: center">
           <form action='/'>
-            <input type='submit' value='Cancel'>
+            <button type='submit' value='Cancel' class="btn btn-danger">Cancel</button>
           </form>
         </td>
       </tr>
