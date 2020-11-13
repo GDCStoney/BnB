@@ -22,7 +22,7 @@
     <td style="vertical-align: bottom">
       <% if !@user %>
       <form action='/sign_up'>
-        <input type='submit' value='Sign Up' id='sign_up' name='sign_up'>
+        <button type='button' value='Sign Up' id='sign_up' name='sign_up' class="btn btn-success">Sign Up</button>
       </form>
       <% end %>
     </td>
@@ -42,7 +42,7 @@
             <input class="form-control" type='text' name='username' placeholder='User Name'>
             <input class="form-control" type="password" name="password" placeholder="Password">
           </div>
-            <input class="form-control" type='submit' value='Sign In' id='sign_in' name='sign_in'>
+            <button type='button' value='Sign In' id='sign_in' name='sign_in' class="btn btn-primary"> Sign In </button>
         </form>
       <% end %>
     </td>
@@ -52,13 +52,13 @@
 <table style='margin: 0 auto; text-align: center'>
 <tr>
 <td>
-  <form class="" action="/search" method="post">
-  <input type="text" name="search" placeholder="Search">
-  <select class="" name="field">
+  <form action="/search" method="post" class="form-inline">
+  <input type="text" name="search" placeholder="Search" class="form-control">
+  <select class="form-control" name="field">
     <option value="name">Name</option>
     <option value="description">Description</option>
   </select>
-  <input type="submit" name="submit" value="Search">
+  <button type="button" name="submit" value="Search" class="btn btn-info">Search</button>
   </form>
 </td>
 </tr>
@@ -92,7 +92,7 @@
         <td>
           <form action='listing/<%= listing.id %>' style="margin-block-end: 0px; text-align: center">
             <input type="hidden" name="id" value='<%= listing.id %>'>
-            <input type='submit' id='book' value='Book'>
+            <button type='button' id='book' value='Book' class="btn btn-danger btn-lg">Book</button>
           </form>
         </td>
         <td style="width: 50px">
