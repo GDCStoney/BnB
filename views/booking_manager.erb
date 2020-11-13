@@ -7,11 +7,12 @@
   var snd = new Audio("/audio.annoying_noise.mp3");
 </script>
 <body>
-<h1 style='margin: 0 auto; text-align: center'>
-  <%= @user.username %>'s bookings:
+
+<h1 class="well" style='margin: 0 auto; text-align: center'>
+  <%= @user.username %>'s Bookings:
 </h1>
 <form action='/' style="margin-block-end: 0px">
-  <input type='submit' id='back' value='Home'>
+  <button type='submit' id='back' value='Home' class="btn btn-primary">Home</button>
 </form>
 <div style='height: 600px; overflow: scroll'>
 <% @bookings.each_with_index do |booking, index| %>
@@ -32,13 +33,13 @@
         <td>
           <form action='/booking/edit/<%= booking.id %>' style="margin-block-end: 0px">
             <input type='hidden' value='<%= booking.id %>' name='id'>
-            <input type='submit' id='edit' value='Edit'>
+            <button type='submit' id='edit' value='Edit' class="btn btn-warning">Edit</button>
           </form>
         </td>
         <td style="width: 50px">
           <form action='/booking/delete/<%= booking.id %>' style="margin-block-end: 0px">
             <input type="hidden" name='id' value='<%= booking.id %>'>
-            <input type='submit' id='delete' value='Delete'>
+            <button type='submit' id='delete' value='Delete' class="btn btn-danger">Delete</button>
           </form>
         </td>
       </tr>
