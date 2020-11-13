@@ -77,9 +77,9 @@ class Booking
     to = ENV['PHONE_NO'] # Your mobile phone number
 
     message = client.messages.create(
-    body: "Hi #{username}! You have made a booking at #{listing_name}. Your stay is from: #{start_date} to #{end_date}. The total price is: £#{price_total} Enjoy your stay BEACH!",
-    from: from,
-    to: to)
+      body: "Hi #{username}! You have made a booking at #{listing_name}. Your stay is from: #{start_date} to #{end_date}. The total price is: £#{price_total} Enjoy your stay BEACH!",
+      from: from,
+      to: to)
     p message.sid
   end
 
