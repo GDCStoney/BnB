@@ -8,14 +8,12 @@
     <script src="/js/bootstrap-datepicker.js"></script>
     <style>
 #grad1 {
-  height: 200px;
-  background-color: red;
+  height: 4px;
   background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
 }
 </style>
   </head>
-  <div id="grad1"></div>
-  <body>
+  <body id="grad1">
 
 
 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/276601608&color=%23ff5500&auto_play=true&hide_related=true&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
@@ -23,13 +21,12 @@
   <a href="https://soundcloud.com/extra_shard" title="ExtraShard" target="_blank" style="color: #cccccc; text-decoration: none;">ExtraShard</a> · <a href="https://soundcloud.com/extra_shard/mario-kart-64-rainbow-road" title="Mario Kart 64 - Rainbow Road" target="_blank" style="color: #cccccc; text-decoration: none;">Mario Kart 64 - Rainbow Road </a></div>
 
     <h1> <%=@listing.name%> </h1>
-
-    <a href="/">Back</a>
+    <a href="/nooo">Back</a>
     <div id="image">
-      <p>IMAGE</p>
+      <img src= <%= @listing.image_filename %> width="150" >
     </div>
     <h3> <%= @listing.description %> </h3>
-    <h3> Price per night: £<%= @listing.price %>0 </h3>
+    <h3> Price per night: £<%= @listing.price %> </h3>
 
 
     <div class="container theme-showcase">
