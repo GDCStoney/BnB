@@ -5,16 +5,17 @@
   <link href="/css/bootstrap-theme.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Confirmation Required for the Delete of a Listing</h1>
+  <h1 class="well" style='margin: 0 auto; text-align: center'>
+    Confirmation Required for the Deletion of a Listing</h1>
   <br>
   <form action='/listing/delete' method='post'>
     <input type="text" name="name" value="<%= @listing.name %>">
     <input type="text" name="description" value="<%= @listing.description %>">
     <input type="hidden" name="id" value="<%= @listing.id %>">
-    <input type="submit" value="CONFIRMED">
+    <button type="submit" value="CONFIRM" class="btn btn-success">CONFIRM</button>
   </form>
   <form action='/'>
-    <input type="submit" name="cancel" value="Cancel">
+    <button type="submit" name="cancel" value="Cancel" class="btn btn-danger">Cancel</button>
   </form>
 </body>
 </html>

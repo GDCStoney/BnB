@@ -5,22 +5,39 @@
   </div>
 <% end %>
 
+
+
 <html>
+<style>
+  #grad4 {
+  height: 100%;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: repeating-linear-gradient(90deg,red,yellow 7%,green 10%);
+  }
+</style>
+<head>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
+</head>
+
 <header>
   <form action='/'>
-    <input type='submit' value='Go Back'>
+    <button type='submit' value='Go Back' class="btn btn-primary">Go Back</button>
   </form>
 </header>
 <script>
   var snd = new Audio("/audio/annoying_noise.mp3");
 </script>
 <body>
+  <div id="grad4">
+  <div style="background-image: url('images/rainbow-unsplash.jpg');">
   <form action="/sign_up" method="post">
     <input type="text" onclick="snd.play();" name="username" placeholder="Name" maxlength="20">
     <input type="text" onclick="snd.play();" name="email" placeholder="Email" maxlength="50">
     +44<input type="text" onclick="snd.play();" name="phone" placeholder="Phone Number" minlength="10" maxlength="11">
     <input type="password" onclick="snd.play();" name="password" placeholder="Password">
-    <input type="submit" onclick="snd.play();" name="submit" value="Submit">
+    <button type="submit" onclick="snd.play();" name="submit" value="Submit" class="btn btn-success">Submit</button>
   </form>
+  </div>
 </body>
 </html>
