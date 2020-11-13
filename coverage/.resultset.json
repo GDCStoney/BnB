@@ -1,11 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/app.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/app.rb": {
->>>>>>> upstream/main
+      "/Users/dan/Projects/BnB/app.rb": {
         "lines": [
           1,
           1,
@@ -13,17 +9,19 @@
           1,
           1,
           1,
-          null,
-          1,
-          1,
           1,
           1,
           null,
           1,
+          1,
+          1,
+          1,
           null,
-          19,
-          19,
-          19,
+          1,
+          null,
+          16,
+          16,
+          16,
           null,
           null,
           1,
@@ -32,30 +30,12 @@
           4,
           4,
           null,
-          null,
-          1,
-          6,
-          null,
-          null,
-          1,
-          4,
-          4,
-          0,
-          0,
-          null,
-          4,
-          null,
-          null,
-          4,
-          null,
-          null,
           1,
           0,
           null,
           1,
           0,
-          null,
-          1,
+          0,
           0,
           null,
           null,
@@ -64,6 +44,22 @@
           null,
           null,
           1,
+          5,
+          null,
+          null,
+          1,
+          3,
+          3,
+          0,
+          0,
+          null,
+          3,
+          null,
+          3,
+          null,
+          null,
+          1,
+          0,
           0,
           null,
           null,
@@ -71,16 +67,66 @@
           0,
           0,
           0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
           0,
           null,
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/lib/user.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/lib/user.rb": {
->>>>>>> upstream/main
+      "/Users/dan/Projects/BnB/lib/user.rb": {
         "lines": [
           1,
           1,
@@ -90,18 +136,18 @@
           null,
           null,
           1,
-          22,
-          22,
-          22,
-          22,
+          21,
+          21,
+          21,
+          21,
           null,
           null,
           1,
-          9,
-          9,
-          9,
-          9,
-          9,
+          8,
+          8,
+          8,
+          8,
+          8,
           null,
           null,
           1,
@@ -116,8 +162,8 @@
           null,
           null,
           1,
-          18,
-          18,
+          17,
+          17,
           9,
           null,
           null,
@@ -131,21 +177,17 @@
           1,
           null,
           1,
-          16,
-          16,
+          15,
+          15,
           7,
           null,
-          12,
+          11,
           null,
           null,
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/lib/database_connection.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/lib/database_connection.rb": {
->>>>>>> upstream/main
+      "/Users/dan/Projects/BnB/lib/database_connection.rb": {
         "lines": [
           1,
           null,
@@ -158,11 +200,7 @@
           null,
           null,
           1,
-<<<<<<< HEAD
-          78,
-=======
-          85,
->>>>>>> upstream/main
+          77,
           null,
           null,
           1,
@@ -172,7 +210,7 @@
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/lib/listing.rb": {
+      "/Users/dan/Projects/BnB/lib/listing.rb": {
         "lines": [
           1,
           1,
@@ -183,12 +221,12 @@
           1,
           null,
           1,
-          5,
-          5,
-          5,
-          5,
-          5,
-          5,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
           null,
           null,
           1,
@@ -197,21 +235,25 @@
           null,
           null,
           1,
+          0,
+          0,
+          null,
+          null,
           1,
           1,
           1,
           null,
           null,
           1,
-<<<<<<< HEAD
-          17,
-          17,
-=======
-          21,
-          21,
->>>>>>> upstream/main
-          2,
+          16,
+          16,
+          16,
+          0,
           null,
+          null,
+          null,
+          1,
+          0,
           null,
           null,
           null,
@@ -219,9 +261,6 @@
           0,
           0,
           0,
-          null,
-          0,
-          0,
           0,
           0,
           0,
@@ -230,30 +269,13 @@
           null,
           0,
           null,
-          null,
-          0,
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          0,
-          0,
-          0,
           null,
           null,
           null,
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/lib/database_connection_setup.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/lib/database_connection_setup.rb": {
->>>>>>> upstream/main
+      "/Users/dan/Projects/BnB/lib/database_connection_setup.rb": {
         "lines": [
           1,
           null,
@@ -264,75 +286,7 @@
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/spec/features/web_helpers.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/spec/features/web_helpers.rb": {
->>>>>>> upstream/main
-        "lines": [
-          1,
-          3,
-          3,
-          3,
-          3,
-          3,
-          3,
-          3,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null
-        ]
-      },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/spec/booking_spec.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/spec/booking_spec.rb": {
->>>>>>> upstream/main
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          3,
-          3,
-          3,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/lib/booking.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/lib/booking.rb": {
->>>>>>> upstream/main
+      "/Users/dan/Projects/BnB/lib/booking.rb": {
         "lines": [
           1,
           1,
@@ -355,6 +309,8 @@
           2,
           2,
           2,
+          2,
+          2,
           null,
           null,
           1,
@@ -367,17 +323,99 @@
           2,
           2,
           null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
           null,
           null,
           null,
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/spec/db_helpers.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/spec/db_helpers.rb": {
->>>>>>> upstream/main
+      "/Users/dan/Projects/BnB/spec/features/web_helpers.rb": {
+        "lines": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null
+        ]
+      },
+      "/Users/dan/Projects/BnB/spec/booking_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          3,
+          3,
+          3,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/dan/Projects/BnB/spec/db_helpers.rb": {
         "lines": [
           1,
           1,
@@ -401,11 +439,7 @@
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/spec/features/f1_infrasture_spec.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/spec/features/f1_infrasture_spec.rb": {
->>>>>>> upstream/main
+      "/Users/dan/Projects/BnB/spec/features/f1_infrasture_spec.rb": {
         "lines": [
           1,
           1,
@@ -442,11 +476,7 @@
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/spec/features/f2_sign_up_spec.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/spec/features/f2_sign_up_spec.rb": {
->>>>>>> upstream/main
+      "/Users/dan/Projects/BnB/spec/features/f2_sign_up_spec.rb": {
         "lines": [
           1,
           1,
@@ -471,11 +501,7 @@
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/spec/features/f3_sign_in_spec.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/spec/features/f3_sign_in_spec.rb": {
->>>>>>> upstream/main
+      "/Users/dan/Projects/BnB/spec/features/f3_sign_in_spec.rb": {
         "lines": [
           1,
           1,
@@ -494,10 +520,7 @@
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/spec/listing_spec.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/spec/features/f4_edit_spec.rb": {
+      "/Users/dan/Projects/BnB/spec/features/f4_edit_spec.rb": {
         "lines": [
           1,
           1,
@@ -511,17 +534,16 @@
           null,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          0,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
       },
-      "/Users/giorgio/Projects/BnB/spec/listing_spec.rb": {
->>>>>>> upstream/main
+      "/Users/dan/Projects/BnB/spec/listing_spec.rb": {
         "lines": [
           1,
           1,
@@ -536,7 +558,7 @@
           1,
           1,
           1,
-          1,
+          0,
           null,
           null,
           null,
@@ -555,11 +577,7 @@
           null
         ]
       },
-<<<<<<< HEAD
-      "/Users/gstoney2/projects/Makers/BnB/spec/user_spec.rb": {
-=======
-      "/Users/giorgio/Projects/BnB/spec/user_spec.rb": {
->>>>>>> upstream/main
+      "/Users/dan/Projects/BnB/spec/user_spec.rb": {
         "lines": [
           1,
           1,
@@ -603,10 +621,6 @@
         ]
       }
     },
-<<<<<<< HEAD
-    "timestamp": 1605107665
-=======
-    "timestamp": 1605109615
->>>>>>> upstream/main
+    "timestamp": 1605201276
   }
 }

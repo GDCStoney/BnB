@@ -1,28 +1,29 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <link href="/css/bootstrap.css" rel="stylesheet">
-  <link href="/css/bootstrap-theme.css" rel="stylesheet">
   <link href="/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <link href="/css/bootstrap-datepicker.standalone.css" rel="stylesheet">
   <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/bootstrap-datepicker.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/js/bootstrap-datepicker.js"></script>
 </head>
 <body style="padding-top: 60px">
   <h1 style='margin: 0 auto; text-align: center'>
     Create your new listing for Beaches Supreme!
   </h1>
-  <form class="" action="/listing/add" method="post">
-    <table>
+  <br><br>
+  <div style="width: 50%; margin-left: 25%; text-align: center">
+  <form action="/listing/add" method="post" enctype="multipart/form-data" utocomplete="off">
+    <table >
       <tr>
         <td colspan="3">
-          <input type="text" name="title" placeholder="Title" maxlength="30">
+          <input style="width: 100%" type="text" name="name" placeholder="Name" maxlength="30">
         </td>
       </tr>
       <tr>
         <td colspan="3">
-          <input type="text" name="description" placeholder="Description" maxlength="300">
+          <input style="width: 100%" type="text" name="description" placeholder="Description" maxlength="300">
         </td>
       </tr>
       <tr>
@@ -30,21 +31,31 @@
           <input type="number" name="price" placeholder="Price" maxlength="5">
         </td>
         <td>
-          <div>
-            <form style="width: 50%; text-align: center">
-              <input class="datepicker" name="start_date" data-date-format="yyyy-mm-dd" data-provide="datepicker" data-date-dates-disabled="[2020-11-10,2020-11-12]">
-            </form>
-          </div>
+          <input style="text-align: center" class="datepicker" name="start_date" data-date-format="yyyy-mm-dd" data-provide="datepicker" placeholder="Start Date">
         </td>
         <td>
-          <div>
-            <form style="width: 50%; text-align: center">
-              <input class="datepicker" name="end_date" data-date-format="yyyy-mm-dd" data-provide="datepicker" data-date-dates-disabled="[2020-11-10,2020-11-12]">
-            </form>
-          </div>
+          <input style="text-align: center" class="datepicker" name="end_date" data-date-format="yyyy-mm-dd" data-provide="datepicker" placeholder="Finish Date">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="file" name="image">
+        </td>
+      </tr>
+      <tr style="height: 15px"><td>  </td> </tr>
+      <tr>
+        <td colspan="2" style="width: 100%; text-align: centre">
+          <input type='submit' value='Add Listing'>
+        </td>
+        </form>
+        <td style="text-align: center">
+          <form action='/'>
+            <input type='submit' value='Cancel'>
+          </form>
         </td>
       </tr>
     </table>
-  </form>
+
+  </div>
 </body>
 </html>

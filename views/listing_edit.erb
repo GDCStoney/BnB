@@ -1,9 +1,10 @@
-<form action="/listing/edit" method="post">
+<form action="/listing/edit" method="post" enctype="multipart/form-data">
   <input type="text" name="name" value="<%= @listing.name %>">
   <input type="text" name="description" value="<%= @listing.description %>">
   <input type="number" name="price" value="<%= @listing.price %>">
   <input type="date" name="start_date" value="<%= @listing.available_dates[0] %>">
   <input type="date" name="end_date" value="<%= @listing.available_dates[1] %>">
+  <input type="file" name="image">
   <input type="hidden" name="id" value=" <%= @listing.id %> ">
   <input type="submit" name="submit" value="Submit">
 </form>

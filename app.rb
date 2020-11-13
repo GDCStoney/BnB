@@ -15,7 +15,8 @@ class BnB < Sinatra::Base
   get '/' do
     # use session[:username] to determine view conent
     @user = session[:user]
-    @listings = Listing.all(field: session[:field], search: session[:search])
+    session[:filter_listing] ? @my_listings = session[:user].id : @my_listings = nil
+    @listings = Listing.all(field: session[:field], search: session[:search], host_id: @my_listings)
     erb :homepage
   end
 
@@ -25,17 +26,20 @@ class BnB < Sinatra::Base
     session[:user] = @user
     redirect '/' # with session variable of username/ID
   end
+
+  post '/my_listings' do
+    session[:filter_listing] ? session[:filter_listing] = nil : session[:filter_listing] = params[:filter_listing]
+    redirect '/'
+  end
+
   get '/clear/' do
     session.clear
   end
+
   post '/search' do
     session[:field] = params[:field]
     session[:search] = params[:search]
     redirect '/'
-  end
-
-  get '/listing/add' do
-    erb :add_listing
   end
 
   get '/sign_up' do
@@ -53,6 +57,24 @@ class BnB < Sinatra::Base
     redirect '/'
   end
 
+  get '/listing/add' do
+    erb :add_listing
+  end
+
+  post '/listing/add' do
+    if params[:image] && params[:image][:filename]
+      filename = params[:image][:filename]
+      file = params[:image][:tempfile]
+      path = "./public/uploads/#{filename}"
+
+      File.open(path, 'wb+') do |f|
+        f.write(file.read)
+      end
+    end
+    result = Listing.create(name: params[:name], description: params[:description], host_id: session[:user].id, price: params[:price], start_date: params[:start_date], end_date: params[:end_date], image_filename: path.gsub('./public',''))
+    redirect '/'
+  end
+
   get '/listing/edit' do
     @listing = Listing.find(id: params[:id])
     erb :listing_edit
@@ -60,7 +82,17 @@ class BnB < Sinatra::Base
 
   post '/listing/edit' do
     description_for_query = params[:description].gsub("'", "''")
-    @listing = Listing.update(name: params[:name], description: description_for_query, price: params[:price], start_date: params[:start_date], end_date: params[:end_date], id: params[:id])
+    name_for_query = params[:name].gsub("'", "''")
+    if params[:image] && params[:image][:filename]
+      filename = params[:image][:filename]
+      file = params[:image][:tempfile]
+      path = "./public/uploads/#{filename}"
+
+      File.open(path, 'wb+') do |f|
+        f.write(file.read)
+      end
+    end
+    @listing = Listing.update(name: name_for_query, description: description_for_query, price: params[:price], start_date: params[:start_date], end_date: params[:end_date], id: params[:id], image_filename: path.gsub('./public',''))
     redirect '/'
   end
 
@@ -104,7 +136,7 @@ class BnB < Sinatra::Base
 
   post '/booking/manager/:id' do
     user = session[:user]
-    listing = Listing.find(id: params[:listing_id])
+    listing = Listing.find(id: params[:id])
     Booking.create(listing_id: listing.id, user_id: user.id, start_date: params[:start_date], end_date: params[:end_date], price: listing.price, confirmation: false)
     redirect '/booking/manager'
   end

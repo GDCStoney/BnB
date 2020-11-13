@@ -4,37 +4,39 @@ require 'date'
 class Listing
 
   attr_accessor :name, :price, :description, :available_dates
-  attr_reader :id, :host_id
+  attr_reader :id, :host_id, :image_filename
 
-  def initialize(id:, name:, price:, description:, host_id:, start_date:, end_date:)
+  def initialize(id:, name:, price:, description:, host_id:, start_date:, end_date:, image_filename:)
     @id = id
     @name = name
     @price = price
     @description = description
     @host_id = host_id
     @available_dates = [Date.parse(start_date), Date.parse(end_date)]
+    @image_filename = image_filename
   end
 
-  def self.create(name:, price:, description:, host_id:, start_date:, end_date:)
-    result = DatabaseConnection.query("INSERT INTO listings(name, price, description, host_id, start_date, end_date) VALUES('#{name}', #{price}, '#{description}', #{host_id}, '#{start_date}', '#{end_date}') RETURNING id, name, price, description, host_id, start_date, end_date;")
-    Listing.new(id: result[0]['id'], name: result[0]['name'], price: result[0]['price'], description: result[0]['description'], host_id: result[0]['host_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'])
+  def self.create(name:, price:, description:, host_id:, start_date:, end_date:, image_filename:)
+    result = DatabaseConnection.query("INSERT INTO listings(name, price, description, host_id, start_date, end_date, image_filename) VALUES('#{name}', #{price}, '#{description}', #{host_id}, '#{start_date}', '#{end_date}', '#{image_filename}') RETURNING id, name, price, description, host_id, start_date, end_date, image_filename;")
+    Listing.new(id: result[0]['id'], name: result[0]['name'], price: result[0]['price'], description: result[0]['description'], host_id: result[0]['host_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'], image_filename: result[0]['image_filename'])
   end
 
-  def self.update(id:, name:, price:, description:, start_date:, end_date:)
-    result = DatabaseConnection.query("UPDATE listings SET name = '#{name}', price = #{price}, description = '#{description}', start_date = '#{start_date}', end_date = '#{end_date}' WHERE id = #{id} RETURNING id, name, price, description, host_id, start_date, end_date;")
-    Listing.new(id: result[0]['id'], name: result[0]['name'], price: result[0]['price'], description: result[0]['description'], host_id: result[0]['host_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'])
+  def self.update(id:, name:, price:, description:, start_date:, end_date:, image_filename:)
+    result = DatabaseConnection.query("UPDATE listings SET name = '#{name}', price = #{price}, description = '#{description}', start_date = '#{start_date}', end_date = '#{end_date}', image_filename = '#{image_filename}' WHERE id = #{id} RETURNING id, name, price, description, host_id, start_date, end_date, image_filename;")
+    Listing.new(id: result[0]['id'], name: result[0]['name'], price: result[0]['price'], description: result[0]['description'], host_id: result[0]['host_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'], image_filename: result[0]['image_filename'])
   end
 
   def self.find(id:)
     result = DatabaseConnection.query("SELECT * FROM listings WHERE id = #{id};")
-    Listing.new(id: result[0]['id'], name: result[0]['name'], price: result[0]['price'], description: result[0]['description'], host_id: result[0]['host_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'])
+    Listing.new(id: result[0]['id'], name: result[0]['name'], price: result[0]['price'], description: result[0]['description'], host_id: result[0]['host_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'], image_filename: result[0]['image_filename'])
   end
 
-  def self.all(search:, field: 'name')
+  def self.all(search:, field: 'name', host_id:)
     field ||= 'name'
-    result = DatabaseConnection.query("SELECT * FROM listings WHERE #{field} ILIKE '%#{search}%' ORDER BY price ASC;")
+    host_id ? host_id = 'AND host_id = ' + host_id.to_s : nil
+    result = DatabaseConnection.query("SELECT * FROM listings WHERE #{field} ILIKE '%#{search}%' #{host_id} ORDER BY price ASC;")
     result.map do |listing|
-      Listing.new(id: listing['id'], name: listing['name'], price: listing['price'], description: listing['description'], host_id: listing['host_id'], start_date: listing['start_date'], end_date: listing['end_date'])
+      Listing.new(id: listing['id'], name: listing['name'], price: listing['price'], description: listing['description'], host_id: listing['host_id'], start_date: listing['start_date'], end_date: listing['end_date'], image_filename: listing['image_filename'])
     end
   end
 
