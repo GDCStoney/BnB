@@ -14,11 +14,11 @@
   </h1>
   <br><br>
   <div style="width: 50%; margin-left: 25%; text-align: center">
-  <form action="/listing/add" method="post" autocomplete="off">
+  <form action="/listing/add" method="post" enctype="multipart/form-data" utocomplete="off">
     <table >
       <tr>
         <td colspan="3">
-          <input style="width: 100%" type="text" name="title" placeholder="Title" maxlength="30">
+          <input style="width: 100%" type="text" name="name" placeholder="Name" maxlength="30">
         </td>
       </tr>
       <tr>
@@ -35,6 +35,11 @@
         </td>
         <td>
           <input style="text-align: center" class="datepicker" name="end_date" data-date-format="yyyy-mm-dd" data-provide="datepicker" placeholder="Finish Date">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="file" name="image">
         </td>
       </tr>
       <tr style="height: 15px"><td>  </td> </tr>
