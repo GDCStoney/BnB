@@ -3,6 +3,9 @@
   <link href="/css/bootstrap.css" rel="stylesheet">
   <link href="/css/bootstrap-theme.css" rel="stylesheet">
 </head>
+<script>
+  var snd = new Audio("/audio.annoying_noise.mp3");
+</script>
 <body>
 <h1 style='margin: 0 auto; text-align: center'>
   <%= @user.username %>'s bookings:
@@ -43,15 +46,5 @@
   </div>
 <% end %>
 </div>
-
-
-
-
-
-
-
-
-
-
 </body>
 </html>
