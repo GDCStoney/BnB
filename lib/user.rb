@@ -18,14 +18,14 @@ class User
     DatabaseConnection.query("INSERT INTO users (username, password, email, phone_no) VALUES ('#{username}', '#{encrypted_password}', '#{email}', '#{phone_no}');")
     result = DatabaseConnection.query("SELECT * FROM users WHERE username = '#{username}';")
     User.new(result[0]['id'], result[0]['username'], result[0]['phone_no'], result[0]['email'])
-    ENV['PHONE_NO'] = "+44" + result[0]['phone_no']
   end
 
   def self.sign_in(username:, password:)
     return nil if self.check_username_taken(username: username)
     result = DatabaseConnection.query("SELECT * FROM users WHERE username = '#{username}';")
     if BCrypt::Password.new(result[0]['password']) == password
-      User.new(result[0]['id'], result[0]['username'], result[0]['phone_no'], result[0]['email'])
+      ENV['PHONE_NO'] = "+44" + result[0]['phone_no']
+      return User.new(result[0]['id'], result[0]['username'], result[0]['phone_no'], result[0]['email'])
     else
       nil
     end
