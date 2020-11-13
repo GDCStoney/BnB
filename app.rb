@@ -34,6 +34,7 @@ class BnB < Sinatra::Base
 
   get '/clear/' do
     session.clear
+    redirect '/'
   end
 
   post '/search' do
@@ -87,12 +88,15 @@ class BnB < Sinatra::Base
       filename = params[:image][:filename]
       file = params[:image][:tempfile]
       path = "./public/uploads/#{filename}"
+      path ||= "./public"
 
       File.open(path, 'wb+') do |f|
         f.write(file.read)
       end
+      @listing = Listing.update_with_image(name: name_for_query, description: description_for_query, price: params[:price], start_date: params[:start_date], end_date: params[:end_date], id: params[:id], image_filename: path.gsub('./public',''))
+    else
+      @listing = Listing.update(name: name_for_query, description: description_for_query, price: params[:price], start_date: params[:start_date], end_date: params[:end_date], id: params[:id])
     end
-    @listing = Listing.update(name: name_for_query, description: description_for_query, price: params[:price], start_date: params[:start_date], end_date: params[:end_date], id: params[:id], image_filename: path.gsub('./public',''))
     redirect '/'
   end
 
