@@ -22,7 +22,7 @@ class Listing
   end
 
   def self.update(id:, name:, price:, description:, start_date:, end_date:, image_filename:)
-    result = DatabaseConnection.query("UPDATE listings SET name = '#{name}', price = #{price}, description = '#{description}', start_date = '#{start_date}', end_date = '#{end_date}' image_filename = '#{image_filename}' WHERE id = #{id} RETURNING id, name, price, description, host_id, start_date, end_date;")
+    result = DatabaseConnection.query("UPDATE listings SET name = '#{name}', price = #{price}, description = '#{description}', start_date = '#{start_date}', end_date = '#{end_date}', image_filename = '#{image_filename}' WHERE id = #{id} RETURNING id, name, price, description, host_id, start_date, end_date, image_filename;")
     Listing.new(id: result[0]['id'], name: result[0]['name'], price: result[0]['price'], description: result[0]['description'], host_id: result[0]['host_id'], start_date: result[0]['start_date'], end_date: result[0]['end_date'], image_filename: result[0]['image_filename'])
   end
 
