@@ -71,7 +71,7 @@ class BnB < Sinatra::Base
         f.write(file.read)
       end
     end
-    result = Listing.create(name: params[:name], description: params[:description], host_id: session[:user].id, price: params[:price], start_date: params[:start_date], end_date: params[:end_date], image_filename: path)
+    result = Listing.create(name: params[:name], description: params[:description], host_id: session[:user].id, price: params[:price], start_date: params[:start_date], end_date: params[:end_date], image_filename: path.gsub('./public',''))
     redirect '/'
   end
 
