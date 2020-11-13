@@ -21,7 +21,7 @@
     <td style="vertical-align: bottom">
       <% if !@user %>
       <form action='/sign_up'>
-        <button type='button' value='Sign Up' id='sign_up' name='sign_up' class="btn btn-success">Sign Up</button>
+        <button type='submit' value='Sign Up' id='sign_up' name='sign_up' class="btn btn-success">Sign Up</button>
       </form>
       <% end %>
     </td>
@@ -41,7 +41,7 @@
             <input class="form-control" type='text' name='username' placeholder='User Name'>
             <input class="form-control" type="password" name="password" placeholder="Password">
           </div>
-            <button type='button' value='Sign In' id='sign_in' name='sign_in' class="btn btn-primary"> Sign In </button>
+            <button type='submit' value='Sign In' id='sign_in' name='sign_in' class="btn btn-primary">Sign In</button>
         </form>
       <% end %>
     </td>
@@ -57,7 +57,7 @@
     <option value="name">Name</option>
     <option value="description">Description</option>
   </select>
-  <button type="button" name="submit" value="Search" class="btn btn-info">Search</button>
+  <button type="submit" name="submit" value="Search" class="btn btn-info">Search</button>
   </form>
 </td>
 </tr>
