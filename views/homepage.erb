@@ -32,7 +32,7 @@
           <div class="input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-leaf"></span></span>
             <input type='text' name='signedin_user' placeholder='<%= @user.username %>' style="text-align: center">
-            <input type="submit" id="sign_out" value="Sign Out">
+            <button type="submit" id="sign_out" value="Sign Out" class="btn btn-danger">Sign Out</button>
           </div>
         </form>
       <% else %>
@@ -107,7 +107,7 @@
           <% if @user.id == listing.host_id %>
           <form action='/listing/delete' style="margin-block-end: 0px">
             <input type="hidden" name='id' value='<%= listing.id %>'>
-            <input type='submit' id='delete' value='Delete'>
+            <button type='submit' id='delete' value='Delete' class="btn btn-danger">Delete</button>>
           </form>
           <% end %>
           <% end %>
@@ -123,23 +123,23 @@
     <tr>
       <td style="width: 150px">
         <form class="" action="/listing/add" method="get">
-          <input type="submit" name="add" value="New Listing">
+          <button type="submit" name="add" value="New Listing" class="btn btn-success btn-lg">New Listing</button>
         </form>
       </td>
       <td style="width: 150px">
         <form class="" action="/my_listings" method="post">
           <input type='hidden' name="filter_listing" value='true'>
           <% if @my_listings %>
-            <input type="submit" name="view" value="All Listings">
+            <button type="submit" name="view" value="All Listings" class="btn btn-info btn-lg">All Listings</button>
           <% else %>
-          <input type="submit" name="view" value="My Listings">
+          <button type="submit" name="view" value="My Listings" class="btn btn-info btn-lg">My Listings</button>
           <% end %>
         </form>
       </td>
       <td style="width: 150px">
         <% if @user %>
           <form class="" action="/booking/manager">
-            <input type="submit" name="booking_manager" value="Booking Manager">
+            <button type="submit" name="booking_manager" value="Booking Manager" class="btn btn-warning btn-lg">Booking Manager</button>
           </form>
         <% end %>
       </td>
