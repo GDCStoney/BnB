@@ -70,16 +70,16 @@ class Booking
 
   def self.text_confirmation(username:, listing_name:, start_date:, end_date:, price_total:)
     account_sid = 'AC35d0264a3e87b14a0291d2db95328967'
-    auth_token = '63bf428dab3d12a327658947a036af5b'
-    client = Twilio::REST::Client.new(account_sid, auth_token)
+    auth_token = '146eb474ec7753f38a17e1333b9aa032'
+    @client = Twilio::REST::Client.new(account_sid, auth_token)
 
     from = '+13345084297' # Your Twilio number
     to = ENV['PHONE_NO'] # Your mobile phone number
 
-    message = client.messages.create(
-    body: "Hi #{username}! You have made a booking at #{listing_name}. Your stay is from: #{start_date} to #{end_date}. The total price is: £#{price_total} Enjoy your stay BEACH!",
-    from: from,
-    to: to)
+    message = @client.messages.create(
+      body: "Hi #{username}! You have made a booking at #{listing_name}. Your stay is from: #{start_date} to #{end_date}. The total price is: £#{price_total} Enjoy your stay BEACH!",
+      from: from,
+      to: to)
     p message.sid
   end
 
