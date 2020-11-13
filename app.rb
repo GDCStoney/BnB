@@ -150,4 +150,8 @@ class BnB < Sinatra::Base
     end
     erb :booking_manager
   end
+
+  get '/nooo' do
+    erb :nooo
+  end
 end
