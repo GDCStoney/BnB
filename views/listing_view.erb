@@ -50,7 +50,7 @@
         <label for="end_date">End date:</label>
         <input name="end_date" class="datepicker" data-date-format="yyyy-mm-dd" data-provide="datepicker" data-date-dates-disabled="<%= @taken_dates %>" data-date-end-date="<%= @listing.available_dates[1] %>" data-date-start-date="<%= @listing.available_dates[0] %>">
         <input type="hidden" name="listing_id" value='<%= @listing.id %>'>
-        <input type="submit" name="submit" value="Submit Booking">
+        <button type="submit" name="submit" value="Submit Booking" class="btn btn-default">Submit Booking</button>
       </form>
     </div>
 
