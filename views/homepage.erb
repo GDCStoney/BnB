@@ -92,7 +92,14 @@
         <td>
           <form action='listing/<%= listing.id %>' style="margin-block-end: 0px; text-align: center">
             <input type="hidden" name="id" value='<%= listing.id %>'>
-            <button type='submit' id='book' value='Book' class="btn btn-danger btn-lg">Book</button>
+            <audio id="audio" src="/audio/annoying_noise.mp3" autoplay="false"></audio>
+            <script>
+              function playSound() {
+                var sound = document.getElementById("audio");
+                sound.play();
+              }
+            </script>           
+            <button type='submit' id='book' value='Book' class="btn btn-danger btn-lg" onclick="playSound();">Book</button>
           </form>
         </td>
         <td style="width: 50px">

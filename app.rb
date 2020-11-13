@@ -138,7 +138,7 @@ class BnB < Sinatra::Base
     user = session[:user]
     listing = Listing.find(id: params[:id])
     booking = Booking.create(listing_id: listing.id, user_id: user.id, start_date: params[:start_date], end_date: params[:end_date], price: listing.price, confirmation: false)
-    Booking.text_confirmation(username: user.username, listing_name: listing.name, start_date: params[:start_date], end_date: params[:end_date], price_total: booking.price_total)
+    # Booking.text_confirmation(username: user.username, listing_name: listing.name, start_date: params[:start_date], end_date: params[:end_date], price_total: booking.price_total)
     redirect '/booking/manager'
   end
 
