@@ -6,10 +6,13 @@
   <link href="/css/bootstrap-theme.css" rel="stylesheet">
   <link href="/css/logo.css" rel="stylesheet">
 </head>
+<script>
+  var snd = new Audio("/audio/annoying_noise.mp3");
+</script>
 <body>
 <div style="background-image: url('images/rainbow-unsplash.jpg');">
 <h1 class="well" style='margin: 0 auto; text-align: center'>
-  Welcome to the BEST Beaches Supreme BnB listing!
+  Welcome to the BEST Beaches Supreme BnB!
 </h1>
 <br>
 <div id="logo_box">
@@ -53,7 +56,7 @@
 <tr>
 <td>
   <form action="/search" method="post" class="form-inline">
-  <input type="text" name="search" placeholder="Search" class="form-control">
+  <input type="text" onclick="snd.play();" name="search" placeholder="Search" class="form-control">
   <select class="form-control" name="field">
     <option value="name">Name</option>
     <option value="description">Description</option>
@@ -76,7 +79,7 @@
           <h4><%= listing.name %></h4>
           <p><%= listing.description %> </p>
         </td>
-        <td>: <strong> £<%= listing.price %> per night</strong></td>
+        <td> <strong> £<%= listing.price %> per night</strong></td>
       </tr>
       <tr>
         <td>
@@ -84,15 +87,20 @@
           <% if @user.id == listing.host_id %>
           <form action='/listing/edit' style="margin-block-end: 0px">
             <input type='hidden' value='<%= listing.id %>' name='id'>
-            <input type='submit' id='edit' value='Edit'>
+            <button type='submit' id='edit' value='Edit' class="btn btn-warning">Edit</button>
           </form>
           <% end %>
           <% end %>
         </td>
         <td>
           <form action='listing/<%= listing.id %>' style="margin-block-end: 0px; text-align: center">
+<<<<<<< HEAD
             <input type="hidden" name="id" value='<%= listing.id %>'>
-            <button type='submit' id='book' value='Book' class="btn btn-danger btn-lg">Book</button>
+            <button type='submit' id='book' value='Book' class="btn btn-success btn-lg">Book</button>
+=======
+            <input type="hidden" name="id" value='<%= listing.id %>'>          
+            <button type='submit' id='book' value='Book' class="btn btn-danger btn-lg" onclick="snd.play();">Book</button>
+>>>>>>> 39b98147a764c3bd9b373bdb2140d64ed272335d
           </form>
         </td>
         <td style="width: 50px">
@@ -100,7 +108,7 @@
           <% if @user.id == listing.host_id %>
           <form action='/listing/delete' style="margin-block-end: 0px">
             <input type="hidden" name='id' value='<%= listing.id %>'>
-            <button type='submit' id='delete' value='Delete' class="btn btn-danger">Delete</button>>
+            <button type='submit' id='delete' value='Delete' class="btn btn-danger">Delete</button>
           </form>
           <% end %>
           <% end %>

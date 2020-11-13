@@ -1,6 +1,19 @@
+<html>
+<head>
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-theme.css" rel="stylesheet">
+</head>
+<body>
+
+<h1 class="well" style='margin: 0 auto; text-align: center'>
+  Edit your Booking
+</h1>
+
 <form action="/booking/edit/<%= @booking.id %>" method="post">
   <input type="date" name="start_date" value="<%= @booking.start_date %>">
   <input type="date" name="end_date" value="<%= @booking.end_date %>">
   <input type="hidden" name="id" value=" <%= @booking.id %> ">
-  <input type="submit" name="submit" value="CONFIRM">
+  <button type="submit" name="submit" value="CONFIRM" class="btn btn-success">CONFIRM</button>
 </form>
+</body>
+</html>
